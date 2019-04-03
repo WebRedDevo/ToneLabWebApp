@@ -1,0 +1,74 @@
+doctype html
+html(lang='ru')
+  head
+    include inc/head.pug
+    title ToneLabWebApp
+  body
+    include inc/header.pug
+    main.main.container
+      section.section.section--planned
+        h2.pd-28  Запланированно 
+        .section--planned__articles
+          .section--planned__wrap.flex
+            +article-planned
+            +article-planned
+            +article-planned
+            +article-planned
+      section.section.section--timetable.pd-28 
+        h2 Задачи на сегодня 
+        .section--timetable__days.flex.j-c__s-b
+          button.button--day.flex.j-c__c.a-i__c П
+          button.button--day.flex.j-c__c.a-i__c В
+          button.button--day.flex.j-c__c.a-i__c С
+          button.button--day.flex.j-c__c.a-i__c.active Ч
+          button.button--day.flex.j-c__c.a-i__c П
+          button.button--day.flex.j-c__c.a-i__c С
+          button.button--day.flex.j-c__c.a-i__c В
+        ul.timetable
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 10:00
+            .timetable__tasks.flex
+              button.button--task.button--orange.task--finished 
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 11:00
+            .timetable__tasks.flex
+              button.button--task.button--green.task--finished 
+              button.button--task.button--green.task--finished 
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 13:00
+            .timetable__tasks.flex
+            
+          li.timetable__item.flex.a-i__c.active
+            p.timetable__time 14:00
+            .timetable__tasks.flex
+              button.button--task.button--orange  
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 15:00
+            .timetable__tasks.flex
+              button.button--task.button--orange  
+              button.button--task.button--green 
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 16:00
+            .timetable__tasks.flex
+              button.button--task.button--green  
+              button.button--task.button--orange  
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 17:00
+            .timetable__tasks.flex
+              button.button--task.button--orange  
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 18:00
+            .timetable__tasks.flex
+              button.button--task.button--orange  
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 19:00
+            .timetable__tasks.flex
+              button.button--task.button--green
+          li.timetable__item.flex.a-i__c
+            p.timetable__time 20:00
+            .timetable__tasks.flex
+              button.button--task.button--orange  
+
+    
+    include inc/footer.pug
+            

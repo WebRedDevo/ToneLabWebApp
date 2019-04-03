@@ -1,0 +1,19 @@
+mixin icon(name,mod)
+  - mod = mod || ''
+  svg(class="icon icon-" + name + ' ' + mod)
+      use(xlink:href="#icon-" + name)
+
+
+mixin article-calendar
+  .article-calendar&attributes(attributes)
+    header.article-calendar__header.flex.j-c__s-b.a-i__c
+      h3 10 Апреля
+      p 7 задач
+
+mixin article-planned
+  article.article-planned
+    header.article-planned__header.flex.j-c__s-b.a-i__c
+      span.article-planned__time 12:00
+      button.article-planned__check
+    h3 89217452078 BMW 3800
+    p Санкт–Петербург, Россия

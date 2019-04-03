@@ -1,0 +1,24 @@
+// wrd slider
+.wrd-slider
+  overflow hidden
+
+  &__container
+    width max-content
+    display flex
+
+
+  // wrd tabs
+.wrd-tabs
+  &__content
+    position absolute
+    opacity 0
+    transition .55s
+    transform scale(0.9) translateZ(0)
+    z-index -3
+    top 0
+    transform-origin bottom
+    &.active
+        position relative
+        opacity 1
+        transform scale(1)
+        z-index 0
