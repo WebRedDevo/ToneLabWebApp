@@ -3,14 +3,47 @@
   padding-top 45px
   padding-bottom 25px
   overflow hidden
+  &__date
+    padding-left 20px
+    padding-right 20px
+    margin-bottom 22px
+    opacity 0
+    transform scale(0.5)
+    transition .33s
+    p
+      color #fff
+      font-size 14px
+      font-weight 500
+      &.year
+        font-size 18px
+        font-weight 500
+  &__calendar
+    width max-content
+    transform translateX(-300px)
+    transition .33s
+
+
+
+
+
 .article-calendar
   border-radius 10px
   background-color #47b5be
   padding 20px
   margin-right 8px
   width 300px
+  height 64px
+  transition .33s
+  &.current
+    background-color #ff8827
+    &.active
+      width 337px
+      height 298px
   &.active
-      background-color #ff8827
+    height 222px
+    .article-calendar__footer
+      transform scale(1)
+      opacity 1
   &:last-child
     margin-right 0
   &__header
@@ -22,7 +55,50 @@
       color rgba(255, 255, 255, 0.61)
       font-size 14px
       font-weight 500
-
-.calendar
-  width max-content
-  transform translateX(-310px)
+  &__footer
+    margin-top 25px
+    transform scale(0)
+    transition .33s
+    opacity 0
+    tr
+      display flex
+      justify-content space-between
+      padding-left 8px
+      padding-right 8px
+      margin-top 19px
+      &:first-child
+        margin-top 0
+    td
+      color #ffffff
+      font-size 15px
+      font-weight 500
+      width 0
+      display flex
+      justify-content center
+      align-items center
+      &.past
+        color rgba(37, 45, 61, 0.35)
+      &.active
+        position relative
+        &:before
+          content ''
+          position absolute
+          width 30px
+          height 30px
+          background-color #252d3d
+          z-index 0
+          border-radius 50%
+        span
+          position relative
+    th
+      color rgba(255, 255, 255, 0.72)
+      font-size 10px
+      font-weight 500
+      width 0
+      display flex
+      justify-content center
+    tbody
+      margin-top 22px
+      margin-bottom 20px
+      display flex
+      flex-direction column

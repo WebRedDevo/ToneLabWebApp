@@ -5,8 +5,21 @@
 @import 'plugins/wrd-atomic.styl'
 
 body
-  background #f9f9f9
-
+  &[calendar='open']
+    .header
+      padding-bottom 75px
+      &__date
+        opacity 1
+        transform scale(1)
+      &__calendar
+        transform translateX(-317px)
+    .main
+      margin-top -35px
+    .section--planned
+      &__articles
+        margin-top 0
+      h2
+        display none
 .container
   max-width 375px
   left 0
@@ -17,9 +30,10 @@ body
   padding-right 28px
 
 .main
-  padding-top 17px
   overflow hidden
-  background #fff
+  margin-top 17px
+  padding-bottom 90px
+  transition .33s
 .section
   h2
     color #4e5067
