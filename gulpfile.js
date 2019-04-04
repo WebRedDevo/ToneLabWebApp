@@ -41,7 +41,7 @@ discardComments: {removeAll: true}
 })
 ];
 
-let isProd = false;
+let isProd = true;
 
 let webpackConfig = {
 	output: {
@@ -71,6 +71,14 @@ gulp.task('clean', function () {
 return gulp.src('public', {read: false})
 .pipe(clean());
 });
+
+
+// manifest
+gulp.task('manifest', function () { 
+return gulp.src('frontend/manifest.json')
+.pipe(gulp.dest('public'));
+});
+
 
 // Pug
 gulp.task('pug', function() {
@@ -165,6 +173,13 @@ verbose: true
 quality: 85
 })]))
 .pipe(gulp.dest('public/images'))
+
+
+.pipe(gulp.src('frontend/assets/icons/**'))
+.pipe(gulp.dest('public/icons'))
+
+
+
 });
 
 gulp.task('watch', function(){
@@ -185,7 +200,7 @@ browserSync.watch('public',browserSync.reload)
 
 // ПЕРВИЧНАЯ СБОРКА 
 gulp.task('build:dev',gulp.series(
-gulp.parallel('webpack', 'fonts:build','images:build','svg:build')));
+gulp.parallel('webpack', 'fonts:build','images:build','svg:build', 'manifest')));
 
 // ЛОКАЛЬНАЯ СБОРКА 
 gulp.task('dev', gulp.series('clean', gulp.parallel('build:dev', 'pug','stylus'),
