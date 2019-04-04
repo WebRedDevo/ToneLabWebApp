@@ -1,28 +1,31 @@
-function moveTouch(){
-  const calandar = document.getElementsByClassName('section--planned__wrap')[0];
+function moveTouch(container){
+  if(container){
 
-  let firstTouch;
-  let left;
+    let firstTouch;
+    let left;
 
-  calandar.addEventListener('touchstart', function(e){
+    const minLeft = 28;
+    const maxLeft = window.screen.width - container.clientWidth - minLeft;
 
-    firstTouch = e.changedTouches[0].pageX;
-    left = calandar.getBoundingClientRect().x;
-    calandar.addEventListener('touchmove', function(e){
+    container.addEventListener('touchstart', function(e){
 
-      let dif = e.changedTouches[0].pageX - firstTouch;
+      firstTouch = e.changedTouches[0].pageX;
+      left = container.getBoundingClientRect().x;
+      container.addEventListener('touchmove', function(e){
 
-      let saveLeft = left + dif;
-      
-      if(saveLeft > 28) saveLeft = 28
+        let dif = e.changedTouches[0].pageX - firstTouch;
 
-      if(saveLeft < -866) saveLeft = -866
+        let saveLeft = left + dif;
 
-      calandar.style.transform = `translateX(${saveLeft}px)`
+        if(saveLeft > minLeft) saveLeft = minLeft
+        if(saveLeft < maxLeft) saveLeft = maxLeft
 
+        container.style.transform = `translateX(${saveLeft}px)`
+
+      })
     })
-  })
 
+  }
 }
 
 export default moveTouch

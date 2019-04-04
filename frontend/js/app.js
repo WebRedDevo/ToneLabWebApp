@@ -4,4 +4,5 @@ import moveTouch from './moveTouch'
 svgSprite(window, document)
 controlCalendar()
 
-moveTouch()
+moveTouch(document.getElementsByClassName('section--planned__wrap')[0])
+moveTouch(document.getElementsByClassName('header--main__calendar')[0])
