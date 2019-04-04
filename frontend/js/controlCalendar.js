@@ -4,8 +4,8 @@ function controlCalendar(){
   const calendars = root.getElementsByClassName('article-calendar');
 
   for( let i = 0, max = calendars.length; i < max; i++){
-    calendars[i].querySelector('.article-calendar__header').addEventListener('click', function(){
-
+    calendars[i].querySelector('.article-calendar__header').addEventListener('touchstart', function(e){
+      console.log(e)
       if(body.getAttribute('calendar')){
         body.setAttribute('calendar', '')
       }else{
