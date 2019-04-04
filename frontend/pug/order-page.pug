@@ -1,0 +1,32 @@
+doctype html
+html(lang='ru')
+  head
+    include inc/head.pug
+    title ToneLabWebApp
+  body
+    include inc/header-order.pug
+    main.main.container
+      form.form.form--add-order.pd-28.flex.f-d__c
+        label
+          h6 Имя
+          input(type='text' value='Юрий Владимирович Юдин' disabled).form__input
+        label
+          h6 Номер
+          input(type='tel'  value='+79771759552' disabled).form__input
+        label
+          h6 Автомобиль
+          input(type='text' value='BMW x6' disabled).form__input
+        label
+          h6 Услуга 
+          input(type='text' value='Замена масла' disabled).form__input
+        label
+          h6 Cтоимость
+          input(type='text' value='3500 p' disabled).form__input
+        label
+          h6 Время
+        input(type='text' value='18:30' disabled).form__input
+        
+
+    
+    include inc/footer.pug
+            

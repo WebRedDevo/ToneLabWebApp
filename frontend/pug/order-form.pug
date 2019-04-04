@@ -1,0 +1,26 @@
+doctype html
+html(lang='ru')
+  head
+    include inc/head.pug
+    title ToneLabWebApp
+  body
+    include inc/header-form.pug
+    main.main.container
+      form.form.form--add-order.pd-28.flex.f-d__c
+        label
+          input(type='text' placeholder='Имя').form__input
+        label
+          input(type='tel' placeholder='Номер').form__input
+        label
+          input(type='text' placeholder='Автомобиль').form__input
+        label
+          input(type='text' placeholder='Услуга').form__input
+        label
+          input(type='text' placeholder='Cтоимость').form__input
+        label
+          input(type='text' placeholder='Время').form__input
+        
+
+    
+    include inc/footer.pug
+            

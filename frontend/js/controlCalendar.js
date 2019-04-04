@@ -4,7 +4,7 @@ function controlCalendar(){
   const calendars = root.getElementsByClassName('article-calendar');
 
   for( let i = 0, max = calendars.length; i < max; i++){
-    calendars[i].addEventListener('click', function(){
+    calendars[i].querySelector('.article-calendar__header').addEventListener('click', function(){
 
       if(body.getAttribute('calendar')){
         body.setAttribute('calendar', '')
