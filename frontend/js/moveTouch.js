@@ -11,12 +11,14 @@ function moveTouch(){
     calandar.addEventListener('touchmove', function(e){
 
       let dif = e.changedTouches[0].pageX - firstTouch;
-      let saveLeft = left + dif;
 
+      let saveLeft = left + dif;
+      
+      if(saveLeft > 28) saveLeft = 28
+
+      if(saveLeft < -866) saveLeft = -866
 
       calandar.style.transform = `translateX(${saveLeft}px)`
-
-
 
     })
   })
