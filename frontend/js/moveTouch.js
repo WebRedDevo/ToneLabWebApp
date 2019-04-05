@@ -5,7 +5,7 @@ function moveTouch(container){
     let left;
 
     const minLeft = 28;
-    const maxLeft = window.screen.width - container.clientWidth - minLeft;
+    const maxLeft = window.screen.width - container.offsetWidth - minLeft;
 
     container.addEventListener('touchstart', function(e){
 
