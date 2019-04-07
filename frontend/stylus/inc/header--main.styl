@@ -19,7 +19,7 @@
         font-weight 500
   &__calendar
     width max-content
-
+    transform translateX(28px)
 
 
 
@@ -28,25 +28,26 @@
 .article-calendar
   border-radius 10px
   background-color #47b5be
-  padding 20px
   margin-right 8px
-  width 300px
+  width 319px
   height 64px
   transition .33s
   &:last-child
     margin-right 0
   &.current
     background-color #ff8827
-    &.active
-      width 337px
-      height 298px
   &.active
-    height 222px
+    &.open
+      transform scaleY(1)
+  &.open
+    height 298px
+    transform scaleY(0.8)
     .article-calendar__footer
       transform scale(1)
       opacity 1
 
   &__header
+    padding 20px
     h3
       color #ffffff
       font-size 24px
@@ -56,7 +57,7 @@
       font-size 14px
       font-weight 500
   &__footer
-    margin-top 25px
+    padding 5px 20px 20px
     transform scale(0)
     transition .33s
     opacity 0
