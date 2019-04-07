@@ -2,7 +2,7 @@ import svgSprite from './inc/svg-sprite';
 import controlCalendar from './controlCalendar'
 import moveTouch from './moveTouch'
 import formValidate from './formValidate'
-import sliderTouch from './sliderTouch'
+
 
 svgSprite(window, document)
 //controlCalendar()
@@ -12,4 +12,3 @@ moveTouch(document.getElementsByClassName('header--main__calendar')[0])
 
 
 formValidate()
-//sliderTouch()
