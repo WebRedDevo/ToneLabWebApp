@@ -4,7 +4,7 @@ import moveTouch from './moveTouch'
 import formValidate from './formValidate'
 
 
-svgSprite(window, document)
+//svgSprite(window, document)
 controlCalendar()
 
 moveTouch(document.getElementsByClassName('section--planned__wrap')[0])

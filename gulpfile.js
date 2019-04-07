@@ -86,7 +86,7 @@ gulp.task('pug', function() {
 	.pipe(pug({
 		pretty:true
 	}))
-	.pipe(gulpif(isProd, htmlmin({ 
+	.pipe(gulpif(!isProd, htmlmin({ 
 		collapseWhitespace: true,
 		removeComments: true
 	})))

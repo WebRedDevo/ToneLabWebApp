@@ -1,0 +1,12 @@
+{
+	"name": "ToneLab Заказы",
+	"short_name" : "TL Заказы",
+	"icons": [{
+		"src": "icons/tonelab.jpg",
+		"sizes": "64x64"
+	}],
+	"display": "fullscreen",
+	"start_url": "index.html",
+	"background_color" : "#283847",
+	"theme_color" : "#252d3d"
+}
