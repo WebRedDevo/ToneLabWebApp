@@ -6,19 +6,19 @@ html(lang='ru')
   body
     include inc/header-form.pug
     main.main.container
-      form.form.form--add-order.send-form.pd-28.flex.f-d__c
+      form(name='addFormOrder').form.form--add-order.send-form.pd-28.flex.f-d__c
         label
-          input(type='text' placeholder='Имя').form__input
+          input(type='text' placeholder='Имя' name='name').form__input
         label
-          input(type='tel' placeholder='Номер').form__input
+          input(type='tel' placeholder='Номер' name='telephone').form__input
         label
-          input(type='text' placeholder='Автомобиль').form__input
+          input(type='text' placeholder='Автомобиль' name='car').form__input
         label
-          input(type='text' placeholder='Услуга').form__input
+          input(type='text' placeholder='Услуга' name='service').form__input
         label
-          input(type='text' placeholder='Cтоимость').form__input
+          input(type='text' placeholder='Cтоимость' name='price').form__input
         label
-          input(type='text' placeholder='Время').form__input
+          input(type='text' placeholder='Время' name='time').form__input
         
 
     

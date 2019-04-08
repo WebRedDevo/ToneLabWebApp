@@ -9,10 +9,37 @@ function formValidate(){
 
     buttonAdd.addEventListener('click', function(e){
       e.preventDefault();
+      let quantityEmpty = 0;
 
       for(let i = 0, max = input.length; i < max; i++){
-        console.log(input[i].value)
+          if(input[i].value !== ''){
+            quantityEmpty++;
+          }
       }
+
+      if(quantityEmpty === input.length){
+        console.log('пустых полей нет');
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'add', true);
+
+        let formData = new FormData(document.forms.addFormOrder);
+        xhr.send(formData)
+
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState === 4){
+
+            console.log(xhr.response)
+            document.body.innerHTML = xhr.response
+            console.log(formData.get('name'))
+
+          }
+        }
+      }else{
+        console.log('заполненны не все поля');
+      }
+
+
     })
 
 
