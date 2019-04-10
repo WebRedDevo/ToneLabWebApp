@@ -21,7 +21,7 @@ function formValidate(){
         console.log('пустых полей нет');
 
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'add', true);
+        xhr.open('POST', 'form-add', true);
 
         let formData = new FormData(document.forms.addFormOrder);
         xhr.send(formData)

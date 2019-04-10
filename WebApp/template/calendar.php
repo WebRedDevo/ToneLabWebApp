@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta name="robots" content="none">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#252d3d">
+    <?php include 'head.php'; ?>
     <title>ToneLabWebApp</title>
   </head>
   <body>
@@ -19,12 +14,6 @@
 
         <?php 
 
-
-     
-
-        
-
-          
 
           $masMonth = array(
             'January' => 'Январь',
@@ -172,14 +161,21 @@
         <div class="section--planned__articles">
           <div class="section--planned__wrap flex">
 
-              <?php 
-
-                require_once 'db_operations.php';
-                getDataDB("SELECT * FROM orders ")
-              ?>
+            <?php foreach( $ordersToday as $orderItem ): ?>
 
 
-                
+
+              <article class="article-planned">
+                <a href="<?php echo '/ton/orders/' . $orderItem['id']; ?>">
+                    <header class="article-planned__header flex j-c__s-b a-i__c">
+                      <span class="article-planned__time"><?php echo $orderItem['time']; ?></span>
+                      <button class="article-planned__check"></button>
+                    </header>
+                    <h3><?php echo $orderItem['customer']; ?></h3>
+                    <p><?php echo $orderItem['service']; ?></p>
+                 </a>
+              </article>
+            <?php endforeach;?>
           </div>
         </div>
       </section>
@@ -259,21 +255,6 @@
         </ul>
       </section>
     </main>
-    <footer class="footer container flex j-c__s-b pd-28">
-      <button class="footer__button button--analytics"> 
-            <svg class="icon icon-line-chart ">
-              <use xlink:href="#icon-line-chart"></use>
-            </svg>
-      </button><a class="footer__button button--add flex j-c__c a-i__c" href="add">
-            <svg class="icon icon-button-add ">
-              <use xlink:href="#icon-button-add"></use>
-            </svg></a>
-      <button class="footer__button button--search">
-            <svg class="icon icon-search ">
-              <use xlink:href="#icon-search"></use>
-            </svg>
-      </button>
-    </footer>
-    <script src="js/app.min.js"></script>
+    <?php include 'footer.php' ?>
   </body>
 </html>

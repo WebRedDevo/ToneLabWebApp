@@ -1,7 +1,7 @@
 <?php 
 
 include_once CORE . 'models/Orders.php';
-include_once CORE . 'components/Db.php';
+
 
 class OrdersController
 {
@@ -14,11 +14,13 @@ class OrdersController
 	public function actionPage($id)
 	{
 		if ($id) {
-			$orderItem = Orders::getOrderItemById($id);
 
-			echo '<pre>';
-			print_r($orderItem);
-			echo '</pre>';
+			$orderItem = Orders::getOrderItemById($id);
+			
+			require_once( ROOT . '/template/order-page.php');
+
+			
+
 		}
 		
 		return true;
