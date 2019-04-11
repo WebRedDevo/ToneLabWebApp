@@ -45,7 +45,7 @@ class Router
 				$actionName = 'action' . ucfirst( array_shift($segments) );
 
 				$parameters = $segments;
-
+				
 				// include class controller 
 				$controllerFile = CORE . 'controllers/' . $controllerName . '.php';
 

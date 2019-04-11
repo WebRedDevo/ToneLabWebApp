@@ -1,6 +1,6 @@
 function svgSprite( window, document ){
-
-  var file     = 'svg/sprite.svg',
+// /ton/template/svg/sprite.svg
+  var file     = '/ton/template/svg/sprite.svg',
     revision = 1;
 
   if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
@@ -38,6 +38,7 @@ function svgSprite( window, document ){
       if( request.status >= 200 && request.status < 400 )
       {
         data = request.responseText;
+
         insert();
         if( isLocalStorage )
         {

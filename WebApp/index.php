@@ -14,6 +14,7 @@
 
 	require_once(CORE . 'components/Router.php');
 	require_once(CORE . 'components/Db.php');
+	require_once(CORE . 'components/Calendar.php');
 	
 
 	// call Router

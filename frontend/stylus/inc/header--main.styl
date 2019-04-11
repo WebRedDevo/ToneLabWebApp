@@ -77,8 +77,12 @@
       display flex
       justify-content center
       align-items center
+      a
+        color #fff
+        position relative
       &.past
-        color rgba(37, 45, 61, 0.35)
+        a
+          color rgba(37, 45, 61, 0.35)
       &.active
         position relative
         &:before
@@ -89,8 +93,8 @@
           background-color #252d3d
           z-index 0
           border-radius 50%
-        span
-          position relative
+
+
     th
       color rgba(255, 255, 255, 0.72)
       font-size 10px

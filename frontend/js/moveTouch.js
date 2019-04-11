@@ -1,12 +1,22 @@
 function moveTouch(container){
   if(container){
 
+    const current = container.getElementsByClassName('current')[0];
+
     let firstTouch;
     let left;
     let saveLeft;
     let dif
     const minLeft = 28;
     const maxLeft = 375 - container.offsetWidth - minLeft;
+
+    if(current){
+        container.style.transform = `translateX(-${current.offsetLeft - 28}px)`
+    }
+
+    container.ondragstart = function() {
+      return false;
+    };
 
     container.addEventListener('touchstart', function(e){
 
@@ -44,7 +54,7 @@ function moveTouch(container){
 
             container.children[i+1].classList.add('active')
             container.style.transition = '0.33s'
-            
+
         }else if(Math.abs(container.getBoundingClientRect().x) < container.children[0].offsetLeft + container.children[0].offsetWidth / deltaLeft){
           saveLeft = minLeft
 

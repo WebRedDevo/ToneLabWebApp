@@ -7,8 +7,8 @@
   <body>
     <header class="header--main container">
       <div class="header--main__date flex j-c__s-b pd-28"> 
-        <p class="year">2019</p>
-        <p>Выполнено: <span>78</span></p>
+        <p class="year"><?php echo $year; ?></p>
+        <p>Выполнено: <span><?php echo $completedOrder; ?></span></p>
       </div>
       <div class="header--main__calendar flex a-i__c">
 
@@ -34,6 +34,7 @@
           $currentDay = '';
 
           for($month = 1; $month <= 12; $month++ ) :
+
             if( $month == date('n',time()) ) {
               $classCurrent = 'current';
               $currentDay = date('j',time());
@@ -41,6 +42,7 @@
               $classCurrent = '';
               $currentDay = '';
             }
+
             
           ?>
 
@@ -63,88 +65,59 @@
                     </tr>
                   </thead>
                   <tbody>
-
-                    <tr>
                     <?php 
-                      $day_month = 1;
-                      $delta = date('N', mktime(0,0,0, $month, 1 , 2019)) - 1;
 
-                      for($j = 1; $j <= 7; $j++){
+                      $first_day_month = date('N', mktime(0,0,0,$month,1,$year));
+                      $day_in_month = date('t', mktime(0,0,0,$month,1,$year));
+                      $month_m = date('m', mktime(0,0,0,$month,1,$year));
+                     
 
-                        if( $j >= date('N', mktime(0,0,0, $month, 1 , 2019))){
-                          echo "<td>". $day_month++ ."</td>";
-                          
-                        }else{
-                          echo "<td class='past'>". date('j', mktime(0,0,0, $month, -$delta + $j, 2019)) ."</td>";
+                      echo '<tr>';
+
+                      $past_day = 1;
+
+                      while($past_day < $first_day_month)
+                      {
+                        echo "<td></td>";
+                        $past_day++;
+
+                      }
+
+                      for($day = 1; $day <= $day_in_month; $day++)
+                      {
+                        $day_week = date('N', mktime(0,0,0,$month,$day,$year));
+                        $day_d = date('d', mktime(0,0,0,$month,$day,$year));
+
+                        if($day_week != $day && $day_week == 1)
+                        {
+                          echo "</tr><tr>";
                         }
 
-                      }
-
-                    ?>
-
-                  </tr>
-
-                  <tr>
-                    <?php 
-                      for($j = $day_month, $max_j = $day_month + 6; $j <= $max_j; $j++){
-                        if($currentDay == $day_month){
-                          echo "<td class='active'><span>". $day_month++ ."</span></td>";
+                        if($day < $currentDay){
+                          $class = "class=\"past\"";
+                        }elseif($day == $currentDay){
+                          $class = "class=\"active\"";
                         }else{
-                          echo "<td>". $day_month++ ."</td>";
+                          $class = "";
                         }
-                      
-  
+
+                        echo "<td $class><a href=\"/ton/calendar/2019-$month_m-$day_d\">$day</a></td>";
                       }
 
-                    ?>
-                  </tr> 
+                      if($day_week < 7)
+                      {
+                        $past_day = $day_week;
 
-                  <tr>
-                    <?php 
-                      for($j = $day_month, $max_j = $day_month + 6; $j <= $max_j; $j++){
-                       if($currentDay == $day_month){
-                          echo "<td class='active'><span>". $day_month++ ."</span></td>";
-                        }else{
-                          echo "<td >". $day_month++ ."</td>";
+                        while($past_day < 7)
+                        {
+                          echo "<td></td>";
+                          $past_day++;
                         }
-  
                       }
 
-                    ?>
-                  </tr> 
-
-                  <tr>
-                    <?php 
-                      for($j = $day_month, $max_j = $day_month + 6; $j <= $max_j; $j++){
-                       echo "<td>". date('j', mktime(0,0,0, $month, $day_month++ , 2019)) ."</td>";
-  
-                      }
+                      echo '</tr>';
 
                     ?>
-                  </tr> 
-                  <tr>
-                    <?php 
-                      for($j = $day_month, $max_j = $day_month + 6; $j <= $max_j; $j++){
-
-                        if($j == date('j', mktime(0,0,0, $month, $j , 2019))){
-                          echo "<td>". date('j', mktime(0,0,0, $month, $day_month++ , 2019))  ."</td>";
-                        }else{
-                          echo "<td class='past'>". date('j', mktime(0,0,0, $month, $day_month++ , 2019)) ."</td>";
-                        }
-                       
-  
-                      }
-
-                    ?>
-                  </tr>
-
-                 
-                    
-                   
-                   
-          
-                    
-
 
                   </tbody>
                 </table>
@@ -156,104 +129,84 @@
       </div>
     </header>
     <main class="main container">
+
+      <?php if($ordersToday): ?>
+
       <section class="section section--planned">
         <h2 class="pd-28"> Запланированно </h2>
         <div class="section--planned__articles">
           <div class="section--planned__wrap flex">
 
-            <?php foreach( $ordersToday as $orderItem ): ?>
+            <?php 
 
+              foreach( $ordersToday as $orderItem ): 
 
+                $current = $orderItem['time'] == '12:00:00' ? 'current' : '';
+              
+              ?>
 
-              <article class="article-planned">
-                <a href="<?php echo '/ton/orders/' . $orderItem['id']; ?>">
-                    <header class="article-planned__header flex j-c__s-b a-i__c">
-                      <span class="article-planned__time"><?php echo $orderItem['time']; ?></span>
-                      <button class="article-planned__check"></button>
-                    </header>
-                    <h3><?php echo $orderItem['customer']; ?></h3>
-                    <p><?php echo $orderItem['service']; ?></p>
-                 </a>
-              </article>
+                <article class="article-planned <?php echo $current?>">
+                  <a href="<?php echo '/ton/orders/' . $orderItem['id']; ?>">
+                      <header class="article-planned__header flex j-c__s-b a-i__c">
+                        <span class="article-planned__time"><?php echo $orderItem['time']; ?></span>
+                        <button class="article-planned__check"></button>
+                      </header>
+                      <h3><?php echo $orderItem['car']; ?></h3>
+                      <p><?php echo $orderItem['service']; ?></p>
+                   </a>
+                </article>
             <?php endforeach;?>
+
+
           </div>
         </div>
       </section>
       <section class="section section--timetable pd-28"> 
         <h2>Задачи на сегодня </h2>
         <div class="section--timetable__days flex j-c__s-b">
-          <button class="button--day flex j-c__c a-i__c">П</button>
-          <button class="button--day flex j-c__c a-i__c">В</button>
-          <button class="button--day flex j-c__c a-i__c">С</button>
-          <button class="button--day flex j-c__c a-i__c active">Ч</button>
-          <button class="button--day flex j-c__c a-i__c">П</button>
-          <button class="button--day flex j-c__c a-i__c">С</button>
-          <button class="button--day flex j-c__c a-i__c">В</button>
+          <?php 
+          
+          echo date('N',mktime(0,0,0, date('n',time()), date('j',time()), 2019));
+
+
+         
+
+          ?>
+
+          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-01" class="button--day flex j-c__c a-i__c">П</a>
+          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-02" class="button--day flex j-c__c a-i__c">В</a>
+          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-03" class="button--day flex j-c__c a-i__c">С</a>
+          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-04" class="button--day flex j-c__c a-i__c active">Ч</a>
+          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-05" class="button--day flex j-c__c a-i__c">П</a>
+          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-06" class="button--day flex j-c__c a-i__c">С</a>
+          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-07" class="button--day flex j-c__c a-i__c">В</a>
         </div>
         <ul class="timetable">
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">10:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--orange task--finished"> </button>
-            </div>
-          </li>
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">11:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--green task--finished"> </button>
-              <button class="button--task button--green task--finished"> </button>
-            </div>
-          </li>
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">13:00</p>
-            <div class="timetable__tasks flex"></div>
-          </li>
-          <li class="timetable__item flex a-i__c active">
-            <p class="timetable__time">14:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--orange"> </button>
-            </div>
-          </li>
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">15:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--orange"> </button>
-              <button class="button--task button--green"> </button>
-            </div>
-          </li>
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">16:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--green"> </button>
-              <button class="button--task button--orange"> </button>
-            </div>
-          </li>
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">17:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--orange"> </button>
-            </div>
-          </li>
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">18:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--orange"> </button>
-            </div>
-          </li>
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">19:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--green"></button>
-            </div>
-          </li>
-          <li class="timetable__item flex a-i__c">
-            <p class="timetable__time">20:00</p>
-            <div class="timetable__tasks flex">
-              <button class="button--task button--orange"> </button>
-            </div>
-          </li>
+          <?php foreach( $ordersToday as $orderItem ): ?>
+
+            <li class="timetable__item flex a-i__c">
+              <p class="timetable__time"><?php echo $orderItem['time']; ?></p>
+              <div class="timetable__tasks flex">
+                <a href="<?php echo '/ton/orders/' . $orderItem['id']; ?>" class="button--task button--orange task--finished"> </a>
+              </div>
+            </li>
+
+          <?php endforeach; ?>
+          
         </ul>
       </section>
+
+    <?php else: ?>
+
+    <section class="section section--nothing-found flex f-d__c j-c__c a-i__c">
+          <svg class="icon icon-embarrassed ">
+            <use xlink:href="#icon-embarrassed"></use>
+          </svg>
+      <p>Заказов нет...</p>
+    </section>
+
+     <?php endif; ?>
+
     </main>
     <?php include 'footer.php' ?>
   </body>

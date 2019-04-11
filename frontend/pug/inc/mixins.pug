@@ -55,8 +55,10 @@ mixin article-calendar
             td 23
             td 24
           tr
-            td 25
-            td 26
+            td 
+              a(href='/2007-07-18') 25
+            td 
+              a(href='/2007-07-18') 26
             td 27
             td 28
             td 29
@@ -65,7 +67,7 @@ mixin article-calendar
       
 
 mixin article-planned
-  article.article-planned
+  article.article-planned&attributes(attributes)
     a(href='order-page.html')
       header.article-planned__header.flex.j-c__s-b.a-i__c
         span.article-planned__time 12:00
