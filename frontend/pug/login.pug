@@ -1,0 +1,21 @@
+doctype html
+html(lang='ru')
+  head
+    include inc/head.pug
+    title ToneLabWebApp
+  body
+    main.main.container.flex.j-c__c.a-i__c.h__100vh.main--login
+      section.section.section--login.flex.f-d__c.a-i__c
+        h1 ToneLab Заказы
+        p Вход для сотрудников 
+        form.form--login.flex.f-d__c.a-i__c
+          label.flex.a-i__c
+            +icon('user')
+            input(type='text' placeholder='Имя' required autocomplete="off") 
+          label.flex.a-i__c
+            +icon('password')
+            input(type='password' placeholder='Пароль' required autocomplete="off")
+          button.button--login.flex
+            +icon('login')
+            
+    script(src='js/app.min.js')

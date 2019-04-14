@@ -5,20 +5,27 @@
     <title>ToneLabWebApp</title>
   </head>
   <body>
-    <header class="header--order header--page container pd-28"><a class="header--order__back flex" href="/ton/calendar">
+    <header class="header--order header--page container pd-28"><a class="header--order__back button--back flex" href="/calendar">
             <svg class="icon icon-left-arrow-chevron ">
               <use xlink:href="#icon-left-arrow-chevron"></use>
             </svg><span>Заказ №<?php echo $orderItem['id']; ?></span></a></header>
     <main class="main container">
       <form class="form form--add-order pd-28 flex f-d__c">
+
+        <?php if($orderItem['customer'] !== ''): ?>
         <label>
           <h6>Имя</h6>
           <input class="form__input" type="text" value="<?php echo $orderItem['customer']; ?>" disabled>
         </label>
+        <?php endif;?>
+
+        <?php if($orderItem['telephone'] !== ''): ?>
         <label>
-          <h6>Номер</h6>
+          <h6>Номер телефона</h6>
           <input class="form__input" type="tel" value="<?php echo $orderItem['telephone']; ?>" disabled>
         </label>
+        <?php endif;?>
+
         <label>
           <h6>Автомобиль</h6>
           <input class="form__input" type="text" value="<?php echo $orderItem['car']; ?>" disabled>
@@ -34,24 +41,9 @@
         <label>
           <h6>Время</h6>
         </label>
-        <input class="form__input" type="text" value="<?php echo $orderItem['time']; ?>" disabled>
+        <input class="form__input" type="text" value="<?php echo substr($orderItem['time'], 0, -3); ?>" disabled>
       </form>
     </main>
-    <footer class="footer container flex j-c__s-b pd-28">
-      <button class="footer__button button--analytics"> 
-            <svg class="icon icon-line-chart ">
-              <use xlink:href="#icon-line-chart"></use>
-            </svg>
-      </button><a class="footer__button button--add flex j-c__c a-i__c" href="/ton/form-add">
-            <svg class="icon icon-button-add ">
-              <use xlink:href="#icon-button-add"></use>
-            </svg></a>
-      <button class="footer__button button--search">
-            <svg class="icon icon-search ">
-              <use xlink:href="#icon-search"></use>
-            </svg>
-      </button>
-    </footer>
-    <script src="/ton/template/js/app.min.js"></script>
+   <?php include 'footer.php' ?>
   </body>
 </html>

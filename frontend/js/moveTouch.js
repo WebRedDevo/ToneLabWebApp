@@ -11,7 +11,7 @@ function moveTouch(container){
     const maxLeft = 375 - container.offsetWidth - minLeft;
 
     if(current){
-        container.style.transform = `translateX(-${current.offsetLeft - 28}px)`
+        container.style.transform = `translate3d(-${current.offsetLeft - 28}px, 0, 0)`
     }
 
     container.ondragstart = function() {
@@ -20,6 +20,7 @@ function moveTouch(container){
 
     container.addEventListener('touchstart', function(e){
 
+      container.style.willChange = 'transform';
       container.style.transition = ''
 
       firstTouch = e.changedTouches[0].pageX;
@@ -27,18 +28,21 @@ function moveTouch(container){
 
       container.addEventListener('touchmove', function(e){
 
+
         dif = e.changedTouches[0].pageX - firstTouch;
         saveLeft = left + dif;
 
         if(saveLeft > minLeft) saveLeft = minLeft
         if(saveLeft < maxLeft) saveLeft = maxLeft
 
-        container.style.transform = `translateX(${saveLeft}px)`
+        container.style.transform = `translate3d(${saveLeft}px, 0, 0)`
       })
     })
 
 
     container.addEventListener('touchend', function(){
+
+      container.style.willChange = 'auto';
 
       for(let i = 0, max = container.children.length; i < max; i++){
 
@@ -65,7 +69,7 @@ function moveTouch(container){
         }
 
       }
-      container.style.transform = `translateX(${saveLeft}px)`
+      container.style.transform = `translate3d(${saveLeft}px, 0, 0)`
     })
 
 

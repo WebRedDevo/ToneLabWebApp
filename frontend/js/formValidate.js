@@ -12,31 +12,33 @@ function formValidate(){
       let quantityEmpty = 0;
 
       for(let i = 0, max = input.length; i < max; i++){
-          if(input[i].value !== ''){
+          if(input[i].value !== '' && input[i].name !== 'name' && input[i].name !== 'telephone' && input[i].name !== 'notice'){
             quantityEmpty++;
           }
       }
 
-      if(quantityEmpty === input.length){
-        console.log('пустых полей нет');
+      if(quantityEmpty === input.length - 3){
 
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'form-add', true);
+        xhr.open('POST', '/form-add', true);
 
         let formData = new FormData(document.forms.addFormOrder);
         xhr.send(formData)
 
         xhr.onreadystatechange = function(){
           if(xhr.readyState === 4){
-
-            console.log(xhr.response)
-            document.body.innerHTML = xhr.response
-            console.log(formData.get('name'))
-
+            let dom = new DOMParser().parseFromString(xhr.response, 'text/html');
+            document.getElementsByTagName('main')[0].innerHTML = dom.getElementsByTagName('main')[0].innerHTML;
           }
         }
       }else{
-        console.log('заполненны не все поля');
+
+        for(let i = 0, max = input.length; i < max; i++){
+            if(input[i].value === '' && input[i].name !== 'name' && input[i].name !== 'telephone' && input[i].name !== 'notice'){
+              input[i].classList.add('warning');
+            }
+        }
+
       }
 
 

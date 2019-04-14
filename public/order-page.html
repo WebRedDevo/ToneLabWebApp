@@ -10,7 +10,7 @@
     <title>ToneLabWebApp</title>
   </head>
   <body>
-    <header class="header--order header--page container pd-28"><a class="header--order__back flex" href="index.html">
+    <header class="header--order header--page container pd-28"><a class="header--order__back button--back flex" href="index.html">
             <svg class="icon icon-left-arrow-chevron ">
               <use xlink:href="#icon-left-arrow-chevron"></use>
             </svg><span>Заказ №184</span></a></header>
@@ -42,6 +42,12 @@
         <input class="form__input" type="text" value="18:30" disabled>
       </form>
     </main>
+    <div class="modal flex j-c__c a-i__c">
+      <form class="form--order-check flex f-d__c a-i__c" method="POST"> 
+        <button class="button--fulfilled">Заказ выполнен</button>
+        <button class="button--unfulfilled">Заказ не выполнен</button>
+      </form>
+    </div>
     <footer class="footer container flex j-c__s-b pd-28">
       <button class="footer__button button--analytics"> 
             <svg class="icon icon-line-chart ">

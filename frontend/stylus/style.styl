@@ -5,7 +5,11 @@
 @import 'plugins/wrd-atomic.styl'
 
 body
-  &[calendar='open']
+  &[calendar='open-modal']
+    position fixed
+    header,main,footer
+      filter blur(3px)
+  &[calendar='open-calendar']
     .header--main
       padding-bottom 75px
       &__date
@@ -44,6 +48,7 @@ body
 
 
 .section--nothing-found
+  margin-top 50px
   .icon
     fill #4e5067
     width 125px
@@ -53,10 +58,46 @@ body
     font-size 25px
     margin-top 15px
 
+.modal
+  position fixed
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background rgba(0, 0, 0, 0)
+  z-index -3
+  transition .23s
+  &.open
+    background rgba(0, 0, 0, 0.85)
+    z-index 3
+    .form--order-check
+      transform translateY(0)
+      opacity 1
+.form--order-check
+  transform translateY(100px)
+  transition .33s
+  opacity 0
+  button
+    font-size 21px
+    padding 16px
+    border-radius 5px
+    font-weight 300
+    font-family 'Avenir Next Cyr'
+    width 100%
+    background 0
+    &:last-child
+      margin-top 13px
+    &.button--fulfilled
+      color lightgreen
+      border 1px solid
+    &.button--unfulfilled
+      color tomato
+      border 1px solid
 
 @import 'section/section--planned.styl'
 @import 'section/section--timetable.styl'
 @import 'section/form--add-order.styl'
+@import 'section/section--login.styl'
 
 
 

@@ -3,7 +3,7 @@
             <svg class="icon icon-line-chart ">
               <use xlink:href="#icon-line-chart"></use>
             </svg>
-      </button><a class="footer__button button--add flex j-c__c a-i__c" href="/ton/form-add">
+      </button><a class="footer__button button--add flex j-c__c a-i__c" href="/form-add">
             <svg class="icon icon-button-add ">
               <use xlink:href="#icon-button-add"></use>
             </svg></a>
@@ -13,4 +13,4 @@
             </svg>
       </button>
     </footer>
-    <script src="/ton/template/js/app.min.js"></script>
+    <script src="/template/js/app.min.js"></script>

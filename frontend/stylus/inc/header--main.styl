@@ -83,16 +83,21 @@
       &.past
         a
           color rgba(37, 45, 61, 0.35)
-      &.active
+      &.active,&.selected
         position relative
         &:before
           content ''
           position absolute
           width 30px
           height 30px
-          background-color #252d3d
           z-index 0
           border-radius 50%
+      &.active
+        &:before
+          background-color #252d3d
+      &.selected
+        &:before
+          border 1px dotted #252d3d
 
 
     th

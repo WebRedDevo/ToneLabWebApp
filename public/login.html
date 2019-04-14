@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="robots" content="none">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#252d3d">
+    <title>ToneLabWebApp</title>
+  </head>
+  <body>
+    <main class="main container flex j-c__c a-i__c h__100vh main--login">
+      <section class="section section--login flex f-d__c a-i__c">
+        <h1>ToneLab Заказы</h1>
+        <p>Вход для сотрудников </p>
+        <form class="form--login flex f-d__c a-i__c">
+          <label class="flex a-i__c">
+                <svg class="icon icon-user ">
+                  <use xlink:href="#icon-user"></use>
+                </svg>
+            <input type="text" placeholder="Имя" required autocomplete="off">
+          </label>
+          <label class="flex a-i__c">
+                <svg class="icon icon-password ">
+                  <use xlink:href="#icon-password"></use>
+                </svg>
+            <input type="password" placeholder="Пароль" required autocomplete="off">
+          </label>
+          <button class="button--login flex">
+                <svg class="icon icon-login ">
+                  <use xlink:href="#icon-login"></use>
+                </svg>
+          </button>
+        </form>
+      </section>
+    </main>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>

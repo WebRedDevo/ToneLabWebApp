@@ -17,8 +17,11 @@ class FormsController
 		    $telephone = $_POST['telephone'];
 		    $service = $_POST['service'];
 		    $time = $_POST['time'];
+		    $date = $_POST['date'];
+		    $salary = $_POST['salary'];
+		    $notice = $_POST['notice'];
 	    	
-	    	Forms::putOrderInDataBase($name,$car,$telephone,$service,$time,$price);
+	    	Forms::putOrderInDataBase($name,$car,$telephone,$service,$date,$time,$price,$salary,$notice);
 	    }
 	    
 

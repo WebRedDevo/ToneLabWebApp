@@ -10,7 +10,8 @@ class CalendarController
 	{
 		$ordersToday = Calendars::getTodayOrders($date);
 
-		$completedOrder = Calendars::getCompletedOrder();
+		$completedOrderYear = Calendars::getCompletedOrderYear();
+		$completedOrderMonth = Calendars::getCompletedOrderMonth();
 
 		$year = Calendar::getCurrentDate('year');
 

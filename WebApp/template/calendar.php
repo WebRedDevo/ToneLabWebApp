@@ -8,7 +8,7 @@
     <header class="header--main container">
       <div class="header--main__date flex j-c__s-b pd-28"> 
         <p class="year"><?php echo $year; ?></p>
-        <p>Выполнено: <span><?php echo $completedOrder; ?></span></p>
+        <p>Заказов в этом году: <span><?php echo $completedOrderYear; ?></span></p>
       </div>
       <div class="header--main__calendar flex a-i__c">
 
@@ -49,7 +49,17 @@
             <div class="article-calendar <?php echo $classCurrent; ?>">
               <header class="article-calendar__header flex j-c__s-b a-i__c">
                 <h3> <?php echo $currentDay . ' ' . $masMonth[date('F', mktime(0,0,0, $month, 1, 2019))]; ?></h3>
-                <p>7 задач</p>
+                <p>
+                  <?php 
+                  if($completedOrderMonth[$month - 1] !== 0){
+                    echo "заказов: " . $completedOrderMonth[$month - 1];
+                  }
+                  else{
+                    echo "заказов нету";
+                  }
+                   ?>
+                  
+                </p>
               </header>
               <footer class="article-calendar__footer">
                 <table>
@@ -101,7 +111,7 @@
                           $class = "";
                         }
 
-                        echo "<td $class><a href=\"/ton/calendar/2019-$month_m-$day_d\">$day</a></td>";
+                        echo "<td $class><a href=\"/calendar/2019-$month_m-$day_d\">$day</a></td>";
                       }
 
                       if($day_week < 7)
@@ -146,7 +156,7 @@
               ?>
 
                 <article class="article-planned <?php echo $current?>">
-                  <a href="<?php echo '/ton/orders/' . $orderItem['id']; ?>">
+                  <a href="<?php echo '/orders/' . $orderItem['id']; ?>">
                       <header class="article-planned__header flex j-c__s-b a-i__c">
                         <span class="article-planned__time"><?php echo $orderItem['time']; ?></span>
                         <button class="article-planned__check"></button>
@@ -166,20 +176,20 @@
         <div class="section--timetable__days flex j-c__s-b">
           <?php 
           
-          echo date('N',mktime(0,0,0, date('n',time()), date('j',time()), 2019));
+          //echo date('N',mktime(0,0,0, date('n',time()), date('j',time()), 2019));
 
 
          
 
           ?>
 
-          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-01" class="button--day flex j-c__c a-i__c">П</a>
-          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-02" class="button--day flex j-c__c a-i__c">В</a>
-          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-03" class="button--day flex j-c__c a-i__c">С</a>
-          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-04" class="button--day flex j-c__c a-i__c active">Ч</a>
-          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-05" class="button--day flex j-c__c a-i__c">П</a>
-          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-06" class="button--day flex j-c__c a-i__c">С</a>
-          <a href="/ton/calendar/2019-<?php echo date('m',time());?>-07" class="button--day flex j-c__c a-i__c">В</a>
+          <a href="/calendar/2019-<?php echo date('m',time());?>-01" class="button--day flex j-c__c a-i__c">П</a>
+          <a href="/calendar/2019-<?php echo date('m',time());?>-02" class="button--day flex j-c__c a-i__c">В</a>
+          <a href="/calendar/2019-<?php echo date('m',time());?>-03" class="button--day flex j-c__c a-i__c">С</a>
+          <a href="/calendar/2019-<?php echo date('m',time());?>-04" class="button--day flex j-c__c a-i__c active">Ч</a>
+          <a href="/calendar/2019-<?php echo date('m',time());?>-05" class="button--day flex j-c__c a-i__c">П</a>
+          <a href="/calendar/2019-<?php echo date('m',time());?>-06" class="button--day flex j-c__c a-i__c">С</a>
+          <a href="/calendar/2019-<?php echo date('m',time());?>-07" class="button--day flex j-c__c a-i__c">В</a>
         </div>
         <ul class="timetable">
           <?php foreach( $ordersToday as $orderItem ): ?>
@@ -187,7 +197,7 @@
             <li class="timetable__item flex a-i__c">
               <p class="timetable__time"><?php echo $orderItem['time']; ?></p>
               <div class="timetable__tasks flex">
-                <a href="<?php echo '/ton/orders/' . $orderItem['id']; ?>" class="button--task button--orange task--finished"> </a>
+                <a href="<?php echo '/orders/' . $orderItem['id']; ?>" class="button--task button--orange "> </a>
               </div>
             </li>
 

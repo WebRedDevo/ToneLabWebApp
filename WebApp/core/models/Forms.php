@@ -2,9 +2,9 @@
 	
 class Forms
 {
-	public static function putOrderInDataBase($name,$car,$telephone,$service,$time,$price){
+	public static function putOrderInDataBase($name,$car,$telephone,$service,$date,$time,$price,$salary,$notice){
 
 		$db = Db::getConnection();
-		$db->query("INSERT INTO orders VALUES(NULL,'2007-07-18','$time', '$car' , '$name' , '$telephone' , '$service' , '$price' ,2323,'не пидр')");
+		$db->query("INSERT INTO orders VALUES(NULL,'$date','$time', '$car' , '$name' , '$telephone' , '$service' , '$price' ,'$salary','$notice')");
 	}
 }

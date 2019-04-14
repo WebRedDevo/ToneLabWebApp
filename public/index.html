@@ -767,12 +767,10 @@
       </div>
     </header>
     <main class="main container">
-      <section class="section section--nothing-found flex f-d__c j-c__c a-i__c">
-            <svg class="icon icon-embarrassed ">
-              <use xlink:href="#icon-embarrassed"></use>
-            </svg>
-        <p>Заказов нет...</p>
-      </section>
+      <!--section.section.section--nothing-found.flex.f-d__c.j-c__c.a-i__c
+      +icon('embarrassed')
+      p Заказов нет...
+      -->
       <section class="section section--planned">
         <h2 class="pd-28"> Запланированно </h2>
         <div class="section--planned__articles">
@@ -890,6 +888,12 @@
         </ul>
       </section>
     </main>
+    <div class="modal flex j-c__c a-i__c">
+      <form class="form--order-check flex f-d__c a-i__c" method="POST"> 
+        <button class="button--fulfilled">Заказ выполнен</button>
+        <button class="button--unfulfilled">Заказ не выполнен</button>
+      </form>
+    </div>
     <footer class="footer container flex j-c__s-b pd-28">
       <button class="footer__button button--analytics"> 
             <svg class="icon icon-line-chart ">
