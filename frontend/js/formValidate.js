@@ -1,7 +1,9 @@
 function formValidate(){
-  if(document.getElementsByClassName('send-form')[0]){
-    const form = document.getElementsByClassName('form--add-order')[0];
-    const buttonAdd = document.getElementsByClassName('button--add')[0];
+  const root = document;
+
+  if(root.getElementsByClassName('send-form')[0]){
+    const form = root.getElementsByClassName('form--add-order')[0];
+    const buttonAdd = root.getElementsByClassName('button--add')[0];
     const input = form.getElementsByTagName('input');
 
     buttonAdd.removeChild(buttonAdd.querySelector('svg'));
@@ -22,13 +24,13 @@ function formValidate(){
         let xhr = new XMLHttpRequest();
         xhr.open('POST', '/form-add', true);
 
-        let formData = new FormData(document.forms.addFormOrder);
+        let formData = new FormData(root.forms.addFormOrder);
         xhr.send(formData)
 
         xhr.onreadystatechange = function(){
           if(xhr.readyState === 4){
             let dom = new DOMParser().parseFromString(xhr.response, 'text/html');
-            document.getElementsByTagName('main')[0].innerHTML = dom.getElementsByTagName('main')[0].innerHTML;
+            root.getElementsByTagName('main')[0].innerHTML = dom.getElementsByTagName('main')[0].innerHTML;
           }
         }
       }else{

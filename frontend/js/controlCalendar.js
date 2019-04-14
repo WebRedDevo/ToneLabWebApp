@@ -26,7 +26,7 @@ function controlCalendar(){
     if(body.getAttribute('calendar')){
       body.setAttribute('calendar', '')
     }else{
-      body.setAttribute('calendar', 'open-calendar')
+      body.setAttribute('calendar', 'open')
     }
 
     for( let i = 0, max = calendars.length; i < max; i++){
