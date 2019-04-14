@@ -11,18 +11,29 @@ function formValidate(){
 
     buttonAdd.addEventListener('click', function(e){
       e.preventDefault();
-      let quantityEmpty = 0;
+      let formCheck = false;
+      let inputCheck = 0;
+      let masRequiredInput = [];
 
       for(let i = 0, max = input.length; i < max; i++){
-          if(input[i].value !== '' && input[i].name !== 'name' && input[i].name !== 'telephone' && input[i].name !== 'notice'){
-            quantityEmpty++;
+          if(input[i].required){
+            masRequiredInput.push(input[i])
           }
       }
-
-      if(quantityEmpty === input.length - 3){
-
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', '/form-add', true);
+      for(let input in masRequiredInput){
+        if(masRequiredInput[input].value === ''){
+          masRequiredInput[input].classList.add('warning');
+        }else{
+          masRequiredInput[input].classList.remove('warning');
+          inputCheck += 1;
+        }
+      }
+      if(inputCheck === masRequiredInput.length){
+        formCheck = true;
+      }
+      if(formCheck){
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', location.pathname, true);
 
         let formData = new FormData(root.forms.addFormOrder);
         xhr.send(formData)
@@ -33,22 +44,9 @@ function formValidate(){
             root.getElementsByTagName('main')[0].innerHTML = dom.getElementsByTagName('main')[0].innerHTML;
           }
         }
-      }else{
-
-        for(let i = 0, max = input.length; i < max; i++){
-            if(input[i].value === '' && input[i].name !== 'name' && input[i].name !== 'telephone' && input[i].name !== 'notice'){
-              input[i].classList.add('warning');
-            }
-        }
-
       }
-
-
     })
-
-
   }
-
 }
 
 export default formValidate

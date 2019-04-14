@@ -1,0 +1,21 @@
+doctype html
+html(lang='ru')
+  head
+    include inc/head.pug
+    title ToneLabWebApp
+  body
+    main.main.container.main--wish-list
+      section.section.section--planned.pd-28
+        h2 Мне нужно 
+        .section--planned__articles
+          +article-planned
+          +article-planned(class='current')
+          +article-planned
+          +article-planned
+          +article-planned
+          +article-planned
+          +article-planned
+  
+    
+    include inc/footer.pug
+            

@@ -5,7 +5,7 @@
     <title>ToneLabWebApp</title>
   </head>
   <body>
-    <header class="header--main container">
+    <header class="header header--main container">
       <div class="header--main__date flex j-c__s-b pd-28"> 
         <p class="year"><?php echo $year; ?></p>
         <p>Заказов в этом году: <span><?php echo $completedOrderYear; ?></span></p>
@@ -48,7 +48,7 @@
 
             <div class="article-calendar <?php echo $classCurrent; ?>">
               <header class="article-calendar__header flex j-c__s-b a-i__c">
-                <h3> <?php echo $currentDay . ' ' . $masMonth[date('F', mktime(0,0,0, $month, 1, 2019))]; ?></h3>
+                <h3> <?php echo $masMonth[date('F', mktime(0,0,0, $month, 1, 2019))]; ?></h3>
                 <p>
                   <?php 
                   if($completedOrderMonth[$month - 1] !== 0){
@@ -151,11 +151,19 @@
 
               foreach( $ordersToday as $orderItem ): 
 
+                if($orderItem['status'] == 0){
+                  $status = 'unfulfilled';
+                }elseif($orderItem['status'] == 1){
+                  $status = 'fulfilled';
+                }else{
+                  $status = '';
+                }
+
                 $current = $orderItem['time'] == '12:00:00' ? 'current' : '';
               
               ?>
 
-                <article class="article-planned <?php echo $current?>">
+                <article class="article-planned <?php echo $current; echo $status; ?>">
                   <a href="<?php echo '/orders/' . $orderItem['id']; ?>">
                       <header class="article-planned__header flex j-c__s-b a-i__c">
                         <span class="article-planned__time"><?php echo $orderItem['time']; ?></span>
@@ -191,19 +199,34 @@
           <a href="/calendar/2019-<?php echo date('m',time());?>-06" class="button--day flex j-c__c a-i__c">С</a>
           <a href="/calendar/2019-<?php echo date('m',time());?>-07" class="button--day flex j-c__c a-i__c">В</a>
         </div>
+
         <ul class="timetable">
-          <?php foreach( $ordersToday as $orderItem ): ?>
+
+          <?php 
+
+          foreach( $ordersToday as $orderItem ): 
+
+            if($orderItem['workplace'] == 'ул. Маршала Говорова 37В'){
+              $markerColor = 'button--orange';
+            }elseif($orderItem['workplace'] == 'Брестский бульвар 9А'){
+              $markerColor = 'button--green';
+            }
+
+            ?>
+
 
             <li class="timetable__item flex a-i__c">
               <p class="timetable__time"><?php echo $orderItem['time']; ?></p>
               <div class="timetable__tasks flex">
-                <a href="<?php echo '/orders/' . $orderItem['id']; ?>" class="button--task button--orange "> </a>
+                <a href="<?php echo '/orders/' . $orderItem['id']; ?>" class="button--task <?php echo $markerColor; ?>"> </a>
               </div>
             </li>
 
           <?php endforeach; ?>
           
         </ul>
+
+
       </section>
 
     <?php else: ?>

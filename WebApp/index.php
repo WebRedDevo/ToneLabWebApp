@@ -22,7 +22,6 @@
 	if(isset($_COOKIE['login'])){
 		$router = new Router();
 		$router->run();	
-		echo $_COOKIE['login'] === 'Руслан';
 	}else{
 		require_once( ROOT . '/template/login.php' );
 		$user = new User;

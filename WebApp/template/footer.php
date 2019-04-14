@@ -3,14 +3,16 @@
             <svg class="icon icon-line-chart ">
               <use xlink:href="#icon-line-chart"></use>
             </svg>
-      </button><a class="footer__button button--add flex j-c__c a-i__c" href="/form-add">
+      </button>
+      <button class="footer__button button--add flex j-c__c a-i__c" >
             <svg class="icon icon-button-add ">
               <use xlink:href="#icon-button-add"></use>
-            </svg></a>
-      <button class="footer__button button--search">
-            <svg class="icon icon-search ">
-              <use xlink:href="#icon-search"></use>
             </svg>
       </button>
+      <a href='/wish-list' class="footer__button button--list flex j-c__c a-i__c">
+            <svg class="icon icon-list">
+              <use xlink:href="#icon-list"></use>
+            </svg>
+      </a>
     </footer>
     <script src="/template/js/app.min.js"></script>

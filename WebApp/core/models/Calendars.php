@@ -25,10 +25,18 @@ class Calendars
 		return $completedOrderMonth;
 	}
 
-	public static function getTodayOrders($date){
+	public static function getTodayOrders($date,$workplace){
 
 		$db = Db::getConnection();
-		$result = $db->query("SELECT * FROM orders WHERE `date` ='" . $date . "' ORDER BY `time` ASC");
+
+		if($workplace){
+			$query_workplace = "AND `workplace` LIKE '". $workplace ."'";	
+		}else{
+			$query_workplace = '';
+		}
+		
+
+		$result = $db->query("SELECT * FROM orders WHERE `date` ='" . $date . "' ".$query_workplace."  ORDER BY `time` ASC" );
 
 		$result->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -43,6 +51,8 @@ class Calendars
 			$ordersToday[$i]['date'] = $row['date'];
 			$ordersToday[$i]['time'] = substr($row['time'], 0, -3);
 			$ordersToday[$i]['service'] = $row['service'];
+			$ordersToday[$i]['status'] = $row['status'];
+			$ordersToday[$i]['workplace'] = $row['workplace'];
 
 			$i++;
 		}

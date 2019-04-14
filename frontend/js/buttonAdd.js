@@ -26,10 +26,13 @@ function buttonAdd(){
  const buttonAdd = root.getElementsByClassName('button--add')[0];
  const modal = root.getElementsByClassName('modal-add')[0];
 
- buttonAdd.addEventListener('click', function(){
-   body.setAttribute('modal', 'open')
-   modal.classList.add('open')
- })
+ if(!root.forms.addFormOrder){
+   buttonAdd.addEventListener('click', function(){
+     body.setAttribute('modal', 'open')
+     modal.classList.add('open')
+   })
+ }
+
 }
 
 export default buttonAdd

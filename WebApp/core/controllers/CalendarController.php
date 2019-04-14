@@ -4,11 +4,21 @@ include_once CORE . 'models/Calendars.php';
 
 class CalendarController
 {
+	public function actionToday($date = '')
+	{	
+		if($_COOKIE['workplace'] == 'admin'){
+			$workplace = '';
+		}else{
+			$workplace = $_COOKIE['workplace'];
+		}
+		
+		if($date){
+			$day = $date;
+		}else{
+			$day = date('Y', time()) . '-' . date('m', time()) . '-' . date('d', time());
+		}
 
-
-	public function actionToday($date = '2007-07-18')
-	{
-		$ordersToday = Calendars::getTodayOrders($date);
+		$ordersToday = Calendars::getTodayOrders($day,$workplace);
 
 		$completedOrderYear = Calendars::getCompletedOrderYear();
 		$completedOrderMonth = Calendars::getCompletedOrderMonth();

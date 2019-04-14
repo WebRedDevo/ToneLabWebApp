@@ -1,10 +1,16 @@
 {
 	"name": "ToneLab Заказы",
 	"short_name" : "TL Заказы",
-	"icons": [{
-		"src": "icons/tonelab.jpg",
+	"icons": [
+		{
+		"src": "template/icons/tonelab.jpg",
 		"sizes": "64x64"
-	}],
+		},
+		{
+		"src": "template/icons/tonelab.jpg",
+		"sizes": "144x144"
+		}
+	],
 	"display": "fullscreen",
 	"orientation": "portrait-primary",
 	"start_url": "/",

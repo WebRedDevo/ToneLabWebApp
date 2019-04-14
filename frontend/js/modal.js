@@ -5,7 +5,6 @@ function modal(modalInfo){
     const modal = root.createElement('div');
     const container = root.createElement(modalInfo.container);
 
-
     /*
 
     */

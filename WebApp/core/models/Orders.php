@@ -17,4 +17,11 @@ class Orders
 
 		return $orderItem;
 	}
+
+	public static function updateOrderItemById($id, $status)
+	{
+		$db = Db::getConnection();
+		$result = $db->query("UPDATE `orders` SET `status` = $status WHERE `id` = $id"); 
+
+	}
 }
