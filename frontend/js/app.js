@@ -6,6 +6,7 @@ import ajax from './ajax'
 import selectedMonth from './selectedMonth'
 import orderCheck from './orderCheck'
 import buttonAdd from './buttonAdd'
+import autoList from './autoList'
 
 
 svgSprite(window, document)
@@ -20,6 +21,7 @@ selectedMonth()
 
 formValidate()
 
+autoList()
 
 buttonAdd()
 orderCheck()

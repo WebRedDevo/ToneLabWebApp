@@ -131,6 +131,9 @@ $('[width]').removeAttr('width');
 },
 parserOptions: { xmlMode: true }
 }))
+
+.pipe(gulp.src('frontend/assets/svg/auto-icons/*.svg'))
+
 .pipe(svgmin({
 js2svg: {
 pretty: true

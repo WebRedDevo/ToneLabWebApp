@@ -8,8 +8,6 @@ body
   &[modal='open']
     position fixed
     width 100%
-    .header,.main,.footer
-      filter blur(8px)
   &[calendar='open']
     .header--main
       padding-bottom 75px
@@ -69,10 +67,13 @@ body
   z-index -3
   transform translateZ(0)
   &.open
-    background rgba(0, 0, 0, 0.85)
+    background rgba(37, 45, 61, 0.95)
     z-index 3
     .form--order-check
       transform scale(1)
+      opacity 1
+    .auto-list
+      transform translateY(0)
       opacity 1
 
 .form--order-check

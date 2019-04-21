@@ -8,7 +8,7 @@ modal({
       tag : 'a',
       class : 'button-modal--add',
       text : 'Добавить заказ',
-      href : '/form-add'
+      href : '/order-form.html'
     },
     {
       tag : 'a',
