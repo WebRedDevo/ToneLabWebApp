@@ -1,4 +1,6 @@
 
+
+
 footer.footer.container.flex.j-c__s-b.pd-28
   button.footer__button.button--analytics 
     +icon('line-chart')
@@ -6,4 +8,74 @@ footer.footer.container.flex.j-c__s-b.pd-28
     +icon('button-add')
   button.footer__button.button--list
     +icon('list')
+
+
+
+.modal.modal--auto-list.flex.a-i__f-e
+  .modal-wrap.flex.f-d__c
+    button.button--close-modal
+    ul.auto-list
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('audi','auto-icon')
+          h6 Audi
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('bmw','auto-icon')
+          h6 BMW
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('volkswagen','auto-icon')
+          h6 Volkswagen
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('ford','auto-icon')
+          h6 Ford
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('toyota','auto-icon')
+          h6 Toyota
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('hyundai','auto-icon')
+          h6 Hyundai
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('chevrolet','auto-icon')
+          h6 Chevrolet
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('kia','auto-icon')
+          h6 KIA
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('honda','auto-icon')
+          h6 Honda
+        +icon('left-arrow-chevron')
+      li.auto-list__item.flex.a-i__c.j-c__s-b
+        .flex.a-i__c
+          +icon('mitsubishi','auto-icon')
+          h6 Mitsubishi
+        +icon('left-arrow-chevron')
+
+
+
+.modal.modal--model-list.flex.a-i__f-e(data-auto-model='Audi')
+  .modal-wrap.flex.f-d__c
+    ul.auto-list
+      li.auto-list__item
+        p модель 3
+      li.auto-list__item
+        p модель 4
+      li.auto-list__item
+        p модель 5
+      
 script(src='js/app.min.js')

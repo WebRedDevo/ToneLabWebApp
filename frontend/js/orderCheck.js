@@ -13,6 +13,11 @@ modal({
       tag : 'button',
       class : 'button-modal--unfulfilled',
       text : 'Заказ не выполнен'
+    },
+    {
+      tag : 'button',
+      class : 'button-modal--unknown',
+      text : 'Без состояния'
     }
   ]
 
@@ -48,8 +53,10 @@ function orderCheck(){
 
             if(e.target.classList.contains('button-modal--fulfilled') ){
               xhr.send("status=1");
-            } else if(e.target.classList.contains('button-modal--unfulfilled') ){
+            }else if(e.target.classList.contains('button-modal--unfulfilled') ){
               xhr.send("status=0");
+            }else{
+              xhr.send("status=2");
             }
 
 

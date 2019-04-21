@@ -42,6 +42,7 @@ function formValidate(){
           if(xhr.readyState === 4){
             let dom = new DOMParser().parseFromString(xhr.response, 'text/html');
             root.getElementsByTagName('main')[0].innerHTML = dom.getElementsByTagName('main')[0].innerHTML;
+            formValidate()
           }
         }
       }

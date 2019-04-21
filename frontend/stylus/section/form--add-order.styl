@@ -22,19 +22,26 @@
 
 
 
-.modal--auto-list
+.modal--auto-list,.modal--model-list
   padding 0 28px
-
+.modal-wrap
+  opacity 0
+  transform translateY(175px)
+  transition opacity .23s, transform .33s
+  width 100%
 .button--close-modal
   position relative
 
-
-
+.modal--model-list
+  .auto-name
+    border-bottom 0
+    h6
+      color #fff
+    .icon-left-arrow-chevron
+      fill #fff
+      transform rotate(90deg)
 .auto-list
   background #fff
-  opacity 0
-  transform translateY(475px)
-  transition opacity .23s, transform .33s
   width 100%
   max-height 475px
   overflow auto
