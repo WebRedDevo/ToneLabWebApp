@@ -34,8 +34,9 @@ function modal(modalInfo){
     modal.appendChild(container);
     body.appendChild(modal);
 
-    modal.addEventListener('click', function(e){
+    modal.addEventListener('touchstart', function(e){
       const target = e.target;
+      console.log(e)
       if(target.classList.contains('open')){
         body.setAttribute('modal', '')
         modal.classList.remove('open')

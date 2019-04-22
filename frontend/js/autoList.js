@@ -16,14 +16,14 @@ function autoList(){
     const autoTitle = root.createElement('div');
     autoTitle.className = 'auto-list__item auto-name flex a-i__c j-c__s-b';
 
-    inputCar.addEventListener('click',function(e){
+    inputCar.addEventListener('touchstart', function(e){
       e.preventDefault();
       body.setAttribute('modal', 'open');
       modalAutoList.classList.add('open');
     })
 
     for(let i = 0, max = autoListItem.length; i < max; i++){
-      autoListItem[i].addEventListener('click', function(){
+      autoListItem[i].addEventListener('touchstart', function(){
         const h6 = this.getElementsByTagName('h6')[0];
         modalAutoList.classList.remove('open');
         modalModelList.classList.add('open');
@@ -38,7 +38,7 @@ function autoList(){
 
 
     function closeModal(container){
-      container.addEventListener('click', function(e){
+      container.addEventListener('touchstart', function(e){
         const target = e.target;
         if(target.classList.contains('open')){
           body.setAttribute('modal', '')

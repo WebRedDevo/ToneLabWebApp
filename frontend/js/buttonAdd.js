@@ -27,7 +27,7 @@ function buttonAdd(){
  const modal = root.getElementsByClassName('modal-add')[0];
 
  if(!root.forms.addFormOrder){
-   buttonAdd.addEventListener('click', function(){
+   buttonAdd.addEventListener('touchstart', function(){
      body.setAttribute('modal', 'open')
      modal.classList.add('open')
    })

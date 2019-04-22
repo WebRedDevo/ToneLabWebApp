@@ -9,19 +9,23 @@ import buttonAdd from './buttonAdd'
 import autoList from './autoList'
 
 
-svgSprite(window, document)
 
-ajax()
-controlCalendar()
 
-moveTouch(document.getElementsByClassName('section--planned__wrap')[0])
-moveTouch(document.getElementsByClassName('header--main__calendar')[0])
 
-selectedMonth()
 
-formValidate()
+svgSprite(window, document);
 
-autoList()
+ajax();
+controlCalendar();
 
-buttonAdd()
-orderCheck()
+moveTouch(document.getElementsByClassName('section--planned__wrap')[0]);
+moveTouch(document.getElementsByClassName('header--main__calendar')[0]);
+
+selectedMonth();
+
+formValidate();
+
+autoList();
+
+buttonAdd();
+orderCheck();
