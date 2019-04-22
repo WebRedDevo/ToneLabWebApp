@@ -43,17 +43,7 @@ function orderCheck(){
 
         e.preventDefault();
 
-        window.onclick = function(e){
-          const root = document;
-          const body = root.body;
-          console.log(e)
-          root.querySelector('.section--timetable').innerHTML = e.target.getAttribute('class') + " | ";
-          root.querySelector('.section--timetable').innerHTML += body.getAttribute('modal') + " | ";
-          root.querySelector('.section--timetable').innerHTML += modal.getAttribute('class');
-        }
-
-
-        //const path = "/update" + e.path[2].getAttribute('href');
+        const path = "/update" + e.path[2].getAttribute('href');
         //body.setAttribute('modal', 'open')
         modal.classList.add('open');
 

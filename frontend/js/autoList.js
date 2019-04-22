@@ -23,7 +23,7 @@ function autoList(){
     })
 
     for(let i = 0, max = autoListItem.length; i < max; i++){
-      autoListItem[i].addEventListener('touchstart', function(){
+      autoListItem[i].addEventListener('click', function(){
         const h6 = this.getElementsByTagName('h6')[0];
         modalAutoList.classList.remove('open');
         modalModelList.classList.add('open');
@@ -38,7 +38,7 @@ function autoList(){
 
 
     function closeModal(container){
-      container.addEventListener('touchstart', function(e){
+      container.addEventListener('click', function(e){
         const target = e.target;
         if(target.classList.contains('open')){
           body.setAttribute('modal', '')
