@@ -33,7 +33,7 @@ function orderCheck(){
   const buttonFulfilled = modal.getElementsByClassName('button-modal--fulfilled')[0];
 
   for( let i = 0, max = order.length; i < max; i++){
-    order[i].addEventListener('touchstart', function(e){
+    order[i].addEventListener('click', function(e){
 
 
 
