@@ -54,7 +54,7 @@ function orderCheck(){
 
 
         //const path = "/update" + e.path[2].getAttribute('href');
-        //body.setAttribute('modal', 'open')
+        body.setAttribute('modal', 'open')
         modal.classList.add('open');
 
 
