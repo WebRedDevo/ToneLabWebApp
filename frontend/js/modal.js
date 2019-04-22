@@ -18,7 +18,7 @@ function modal(modalInfo){
       return button;
     }
 
-    modal.className = "modal flex j-c__c a-i__c open";
+    modal.className = "modal flex j-c__c a-i__c";
     modal.classList.add(modalInfo.className);
     container.className = "form--order-check flex f-d__c a-i__c";
 
