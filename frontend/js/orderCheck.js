@@ -33,22 +33,18 @@ function orderCheck(){
   const buttonFulfilled = modal.getElementsByClassName('button-modal--fulfilled')[0];
 
   for( let i = 0, max = order.length; i < max; i++){
-    order[i].addEventListener('touchstart', function(e){
+    order[i].addEventListener('click', function(e){
 
       const target = e.target;
-
-
 
       if(target.classList.contains('article-planned__check')){
         e.preventDefault();
         const path = "/update" + e.path[2].getAttribute('href');
-        body.setAttribute('modal', 'open');
-        modal.classList.add('open');
-
-        root.querySelector('.section--timetable').innerHTML = e.path[2];
+        body.setAttribute('modal', 'open')
+        modal.classList.add('open')
 
         for( let i = 0, max = button.length; i < max; i++ ){
-          button[i].addEventListener('touchstart', function(e){
+          button[i].addEventListener('click', function(e){
             e.preventDefault();
 
             const xhr = new XMLHttpRequest();
