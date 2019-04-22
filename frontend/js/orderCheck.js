@@ -43,6 +43,15 @@ function orderCheck(){
         body.setAttribute('modal', 'open')
         modal.classList.add('open')
 
+        window.onclick = function(e){
+          const root = document;
+          const body = root.body;
+          console.log(e.target)
+          root.querySelector('.section--timetable').innerHTML = e.target.getAttribute('class') + " | ";
+          root.querySelector('.section--timetable').innerHTML += body.getAttribute('modal') + " | ";
+          root.querySelector('.section--timetable').innerHTML += modal.getAttribute('class');
+        }
+
         for( let i = 0, max = button.length; i < max; i++ ){
           button[i].addEventListener('click', function(e){
             e.preventDefault();
