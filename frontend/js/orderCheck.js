@@ -33,7 +33,7 @@ function orderCheck(){
   const buttonFulfilled = modal.getElementsByClassName('button-modal--fulfilled')[0];
 
   for( let i = 0, max = order.length; i < max; i++){
-    order[i].addEventListener('click', function(e){
+    order[i].addEventListener('touchstart', function(e){
 
 
 
@@ -43,7 +43,17 @@ function orderCheck(){
 
         e.preventDefault();
 
-        const path = "/update" + e.path[2].getAttribute('href');
+        window.onclick = function(e){
+          const root = document;
+          const body = root.body;
+          console.log(e)
+          root.querySelector('.section--timetable').innerHTML = e.target.getAttribute('class') + " | ";
+          root.querySelector('.section--timetable').innerHTML += body.getAttribute('modal') + " | ";
+          root.querySelector('.section--timetable').innerHTML += modal.getAttribute('class');
+        }
+
+
+        //const path = "/update" + e.path[2].getAttribute('href');
         //body.setAttribute('modal', 'open')
         modal.classList.add('open');
 
