@@ -47,9 +47,8 @@ function orderCheck(){
           const root = document;
           const body = root.body;
           console.log(e)
-          root.querySelector('.section--timetable').innerHTML = e.target.getAttribute('class') + " | ";
-          root.querySelector('.section--timetable').innerHTML += body.getAttribute('modal') + " | ";
-          root.querySelector('.section--timetable').innerHTML += modal.getAttribute('class');
+          root.querySelector('.section--timetable').innerHTML = e.path[2].getAttribute('href');
+
         }
 
 
