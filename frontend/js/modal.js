@@ -18,7 +18,7 @@ function modal(modalInfo){
       return button;
     }
 
-    modal.className = "modal flex j-c__c a-i__c";
+    modal.className = "modal flex j-c__c a-i__c open";
     modal.classList.add(modalInfo.className);
     container.className = "form--order-check flex f-d__c a-i__c";
 
@@ -36,7 +36,6 @@ function modal(modalInfo){
 
     modal.addEventListener('touchstart', function(e){
       const target = e.target;
-      console.log(e)
       if(target.classList.contains('open')){
         body.setAttribute('modal', '')
         modal.classList.remove('open')

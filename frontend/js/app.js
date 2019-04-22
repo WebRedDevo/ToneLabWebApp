@@ -11,12 +11,6 @@ import autoList from './autoList'
 
 
 
-window.onclick = function(e){
-  const root = document;
-  const body = root.body;
-  console.log(e.target)
-  root.querySelector('.section--timetable').innerHTML = e.target.getAttribute('class');
-}
 
 svgSprite(window, document);
 

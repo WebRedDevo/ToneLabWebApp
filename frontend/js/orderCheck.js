@@ -35,6 +35,15 @@ function orderCheck(){
   for( let i = 0, max = order.length; i < max; i++){
     order[i].addEventListener('click', function(e){
 
+      window.onclick = function(e){
+        const root = document;
+        const body = root.body;
+        console.log(e)
+        root.querySelector('.section--timetable').innerHTML = e.target.getAttribute('class') + " | ";
+        root.querySelector('.section--timetable').innerHTML += body.getAttribute('modal') + " | ";
+        root.querySelector('.section--timetable').innerHTML += modal.getAttribute('class');
+      }
+
       const target = e.target;
 
       if(target.classList.contains('article-planned__check')){
@@ -43,14 +52,7 @@ function orderCheck(){
         body.setAttribute('modal', 'open')
         modal.classList.add('open')
 
-        window.onclick = function(e){
-          const root = document;
-          const body = root.body;
-          console.log(e.target)
-          root.querySelector('.section--timetable').innerHTML = e.target.getAttribute('class') + " | ";
-          root.querySelector('.section--timetable').innerHTML += body.getAttribute('modal') + " | ";
-          root.querySelector('.section--timetable').innerHTML += modal.getAttribute('class');
-        }
+
 
         for( let i = 0, max = button.length; i < max; i++ ){
           button[i].addEventListener('click', function(e){
