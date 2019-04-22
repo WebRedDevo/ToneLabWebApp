@@ -41,6 +41,8 @@ function orderCheck(){
 
       if(target.classList.contains('article-planned__check')){
 
+        e.preventDefault();
+
         window.onclick = function(e){
           const root = document;
           const body = root.body;
@@ -50,10 +52,10 @@ function orderCheck(){
           root.querySelector('.section--timetable').innerHTML += modal.getAttribute('class');
         }
 
-        e.preventDefault();
-        const path = "/update" + e.path[2].getAttribute('href');
-        body.setAttribute('modal', 'open')
-        modal.classList.add('open')
+
+        //const path = "/update" + e.path[2].getAttribute('href');
+        //body.setAttribute('modal', 'open')
+        modal.classList.add('open');
 
 
 
