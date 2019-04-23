@@ -40,19 +40,9 @@ function orderCheck(){
       const target = e.target;
 
       if(target.classList.contains('article-planned__check')){
-
         e.preventDefault();
 
-        window.onclick = function(e){
-          const root = document;
-          const body = root.body;
-          console.log(e)
-          root.querySelector('.section--timetable').innerHTML = e.path[2].getAttribute('href');
-
-        }
-
-
-        //const path = "/update" + e.path[2].getAttribute('href');
+        const path = "/update" + e.path[2].getAttribute('href');
         body.setAttribute('modal', 'open')
         modal.classList.add('open');
 
