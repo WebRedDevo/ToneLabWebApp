@@ -73,9 +73,10 @@ return gulp.src('public', {read: false})
 });
 
 
-// manifest
-gulp.task('manifest', function () { 
+// json
+gulp.task('json', function () { 
 return gulp.src('frontend/manifest.json')
+.pipe(gulp.src('frontend/price.json'))
 .pipe(gulp.dest('public'));
 });
 
@@ -203,7 +204,7 @@ browserSync.watch('public',browserSync.reload)
 
 // ПЕРВИЧНАЯ СБОРКА 
 gulp.task('build:dev',gulp.series(
-gulp.parallel('webpack', 'fonts:build','images:build','svg:build', 'manifest')));
+gulp.parallel('webpack', 'fonts:build','images:build','svg:build', 'json')));
 
 // ЛОКАЛЬНАЯ СБОРКА 
 gulp.task('dev', gulp.series('clean', gulp.parallel('build:dev', 'pug','stylus'),

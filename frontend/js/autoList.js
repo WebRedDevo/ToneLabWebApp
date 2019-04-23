@@ -1,3 +1,5 @@
+import httpGet from './httpGet'
+
 function autoList(){
   const root = document;
   const body = root.body;
@@ -6,34 +8,79 @@ function autoList(){
   const modalAutoList = root.getElementsByClassName('modal--auto-list')[0];
   const modalModelList = root.getElementsByClassName('modal--model-list')[0];
 
+  const modelListContainer = modalModelList.getElementsByClassName('auto-list')[0];
+
   const autoListItem = modalAutoList.getElementsByClassName('auto-list')[0].getElementsByClassName('auto-list__item');
 
   let nameAuto = '';
 
 
+
   if(inputCar){
 
-    const autoTitle = root.createElement('div');
-    autoTitle.className = 'auto-list__item auto-name flex a-i__c j-c__s-b';
+    httpGet('price.json')
+      .then(
+        response => {
+          let jsonParse = JSON.parse(response)
 
-    inputCar.addEventListener('touchstart', function(e){
-      e.preventDefault();
-      body.setAttribute('modal', 'open');
-      modalAutoList.classList.add('open');
-    })
+          console.log(jsonParse)
+          openList(jsonParse)
+        }
+      );
 
-    for(let i = 0, max = autoListItem.length; i < max; i++){
-      autoListItem[i].addEventListener('click', function(){
-        const h6 = this.getElementsByTagName('h6')[0];
-        modalAutoList.classList.remove('open');
-        modalModelList.classList.add('open');
 
-        autoTitle.innerHTML = this.innerHTML;
-        modalModelList.querySelector('.modal-wrap').prepend(autoTitle);
+      function openList(autoList){
+        const autoTitle = root.createElement('div');
+        autoTitle.className = 'auto-list__item auto-name flex a-i__c j-c__s-b';
 
-        nameAuto = h6.innerHTML;
-        inputCar.value = nameAuto;
-      })
+        inputCar.addEventListener('touchstart', function(e){
+          e.preventDefault();
+          body.setAttribute('modal', 'open');
+          modalAutoList.classList.add('open');
+        })
+
+        for(let i = 0, max = autoListItem.length; i < max; i++){
+          autoListItem[i].addEventListener('click', function(){
+
+
+
+            const h6 = this.getElementsByTagName('h6')[0];
+            modalAutoList.classList.remove('open');
+            modalModelList.classList.add('open');
+
+            autoTitle.innerHTML = this.innerHTML;
+
+            modalModelList.querySelector('.modal-wrap').prepend(autoTitle);
+
+            nameAuto = h6.innerHTML;
+            inputCar.value = nameAuto;
+
+            createListModel(autoList[nameAuto])
+            console.log(autoList[nameAuto])
+          })
+        }
+      }
+
+
+    function createListModel(modelList){
+      const ul = root.createElement('ul');
+      ul.className = 'auto-list';
+
+      function createItem(title){
+        const li = root.createElement('li');
+        const p = root.createElement('p');
+        li.className = 'auto-list__item';
+        p.innerHTML = title;
+        li.appendChild(p)
+        return li;
+      }
+
+      for(let key in modelList){
+        ul.appendChild(createItem(key))
+      }
+
+      modelListContainer.innerHTML = ul.innerHTML;
+
     }
 
 
