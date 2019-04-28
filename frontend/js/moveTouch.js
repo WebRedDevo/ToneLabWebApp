@@ -1,17 +1,43 @@
-function moveTouch(container){
-  if(container){
+function moveTouch(object){
+  if(object.container){
 
+    const container = object.container;
+    const control = object.control;
     const current = container.getElementsByClassName('current')[0];
+    const currentLeft = object.currentLeft ? object.currentLeft : object.padding;
+    let childrenMas = [
+      container
+    ]
 
     let firstTouch;
     let left;
     let saveLeft;
     let dif
-    const minLeft = 28;
+    const minLeft = object.padding ? object.padding : 0;
     const maxLeft = 375 - container.offsetWidth - minLeft;
 
     if(current){
-        container.style.transform = `translate3d(-${current.offsetLeft - 28}px, 0, 0)`
+        container.style.transform = `translate3d(-${current.offsetLeft - currentLeft}px, 0, 0)`
+    }
+
+    if(control){
+      childrenMas.push(control)
+
+      for(let i = 0, max = control.children.length; i < max; i++){
+        control.children[i].addEventListener('touchstart', function(e){
+          e.preventDefault();
+
+          for(let children in childrenMas){
+            for(let i = 0, max = childrenMas[children].children.length; i < max; i++){
+              childrenMas[children].children[i].classList.remove('active')
+            }
+            childrenMas[children].children[i].classList.add('active')
+          }
+
+          container.style.transition = '0.33s'
+          container.style.transform = `translate3d(-${container.children[i].offsetLeft }px, 0, 0)`
+        })
+      }
     }
 
     container.ondragstart = function() {
@@ -28,7 +54,6 @@ function moveTouch(container){
 
       container.addEventListener('touchmove', function(e){
 
-
         dif = e.changedTouches[0].pageX - firstTouch;
         saveLeft = left + dif;
 
@@ -38,7 +63,6 @@ function moveTouch(container){
         container.style.transform = `translate3d(${saveLeft}px, 0, 0)`
       })
     })
-
 
     container.addEventListener('touchend', function(){
 
@@ -50,21 +74,24 @@ function moveTouch(container){
 
         if( Math.abs(container.getBoundingClientRect().x) > container.children[i].offsetLeft + container.children[i].offsetWidth / deltaLeft){
 
-            saveLeft = -container.children[i+1].offsetLeft + 28;
+            saveLeft = -container.children[i+1].offsetLeft + minLeft;
 
-            for(let i = 0, max = container.children.length; i < max; i++){
-              container.children[i].classList.remove('active')
+            for(let children in childrenMas){
+              for(let i = 0, max = childrenMas[children].children.length; i < max; i++){
+                childrenMas[children].children[i].classList.remove('active')
+              }
+              childrenMas[children].children[i+1].classList.add('active')
             }
 
-            container.children[i+1].classList.add('active')
             container.style.transition = '0.33s'
 
         }else if(Math.abs(container.getBoundingClientRect().x) < container.children[0].offsetLeft + container.children[0].offsetWidth / deltaLeft){
           saveLeft = minLeft
 
-          container.children[1].classList.remove('active')
-          container.children[0].classList.add('active')
-
+          for(let children in childrenMas){
+            childrenMas[children].children[1].classList.remove('active')
+            childrenMas[children].children[0].classList.add('active')
+          }
           container.style.transition = '0.33s'
         }
 

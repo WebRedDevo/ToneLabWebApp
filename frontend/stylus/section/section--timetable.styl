@@ -7,21 +7,44 @@
 
 
 .button--day
-  color #4e5067
   font-size 10px
   font-weight 700
   background 0
-  width 30px
-  height 30px
-  border-radius 50%
+  .dayWeek
+    color #4e5067
+    width 30px
+    height 30px
+    border-radius 50%
+    position relative
+    &:before
+      content ''
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      background-color #ffb146
+      border-radius 50%
+      z-index -1
+      transition .33s
+      transform scale(0)
+  .dayNum
+    margin-top 7px
+    color #adaeb4
   &.active
-    background-color #ffb146
+    .dayWeek
+      &:before
+        transform scale(1)
 
 
 
 .timetable
   margin-top 15px
+  &__wrap
+    width max-content
   &__item
+    width 320px
+    margin-right 50px
     &.active
       position relative
       &:before
@@ -47,15 +70,28 @@
 
 
 .button--task
-  height 20px
+  min-height 20px
+  padding 15px
   width 100%
   border-radius 6px
   margin-right 10px
+  p
+    font-family "Avenir Next Cyr"
+    font-size 13px
+    font-weight 500
+    margin-top 4px
+
   &.button--orange
     background-image linear-gradient(196deg, #ffbd4f 0%, #ff8827 100%)
+    p
+      color #2b2f3e
   &.button--green
     background-color #47b5be
+    p
+      color #fff
   &.task--finished
     opacity 0.4
+    p
+      color #333
   &:last-child
     margin-right 0

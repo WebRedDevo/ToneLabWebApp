@@ -18,8 +18,21 @@ svgSprite(window, document);
 ajax();
 controlCalendar();
 
-moveTouch(document.getElementsByClassName('section--planned__wrap')[0]);
-moveTouch(document.getElementsByClassName('header--main__calendar')[0]);
+moveTouch({
+  container : document.getElementsByClassName('section--planned__wrap')[0],
+  padding : 28,
+});
+
+moveTouch({
+  container : document.getElementsByClassName('header--main__calendar')[0],
+  padding : 28,
+});
+
+moveTouch({
+  container : document.getElementsByClassName('timetable__wrap')[0],
+  control: document.getElementsByClassName('section--timetable__days')[0],
+  currentLeft : 28
+});
 
 selectedMonth();
 

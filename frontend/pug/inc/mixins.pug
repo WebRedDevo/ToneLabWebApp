@@ -74,3 +74,76 @@ mixin article-planned
         button.article-planned__check
       h3 89217452078 BMW 3800
       p Санкт–Петербург, Россия
+
+
+
+mixin timetable 
+  ul.timetable&attributes(attributes)
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 10:00
+      .timetable__tasks.flex
+        a(href="#").button--task.button--orange.task--finished
+          p BMW
+          p 89217452078
+          p тонировка: задние
+          p 3800
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 11:00
+      .timetable__tasks.flex
+        a(href="#").button--task.button--green.task--finished 
+          p BMW
+          p 89217452078
+          p тонировка: задние
+          p 3800
+        a(href="#").button--task.button--green.task--finished 
+          p BMW
+          p 89217452078
+          p тонировка: задние
+          p 3800
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 13:00
+      .timetable__tasks.flex
+      
+    li.timetable__item.flex.a-i__c.active
+      p.timetable__time 14:00
+      .timetable__tasks.flex
+        a(href="#").button--task.button--orange
+          p BMW
+          p 89217452078
+          p тонировка: задние
+          p 3800
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 15:00
+      .timetable__tasks.flex
+        a(href="#").button--task.button--orange
+          p BMW
+          p 89217452078
+          p тонировка: задние
+          p 3800
+        a(href="#").button--task.button--green 
+          p BMW
+          p 89217452078
+          p тонировка: задние
+          p 3800
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 16:00
+      .timetable__tasks.flex
+        button.button--task.button--green  
+        button.button--task.button--orange  
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 17:00
+      .timetable__tasks.flex
+        button.button--task.button--orange  
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 18:00
+      .timetable__tasks.flex
+        button.button--task.button--orange  
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 19:00
+      .timetable__tasks.flex
+        button.button--task.button--green
+    li.timetable__item.flex.a-i__c
+      p.timetable__time 20:00
+      .timetable__tasks.flex
+        button.button--task.button--orange  
+  

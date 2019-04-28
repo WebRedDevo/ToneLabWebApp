@@ -9,7 +9,7 @@ function formValidate(){
     buttonAdd.removeChild(buttonAdd.querySelector('svg'));
     buttonAdd.classList.add('active');
 
-    buttonAdd.addEventListener('click', function(e){
+    buttonAdd.addEventListener('click', function validate(e){
       e.preventDefault();
       let formCheck = false;
       let inputCheck = 0;
@@ -41,8 +41,8 @@ function formValidate(){
         xhr.onreadystatechange = function(){
           if(xhr.readyState === 4){
             let dom = new DOMParser().parseFromString(xhr.response, 'text/html');
-            root.getElementsByTagName('main')[0].innerHTML = dom.getElementsByTagName('main')[0].innerHTML;
-            formValidate()
+            root.getElementsByTagName('form')[0].innerHTML = dom.getElementsByTagName('form')[0].innerHTML;
+            formCheck = false;
           }
         }
       }
