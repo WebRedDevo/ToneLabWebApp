@@ -53,7 +53,9 @@ function moveTouch(object){
           }
 
           container.style.transition = '0.33s'
-          container.style.transform = `translate3d(-${container.children[i].offsetLeft }px, 0, 0)`
+          console.log(container.children[i].offsetLeft)
+          console.log(container.children[i].getBoundingClientRect().left)
+          container.style.transform = `translate3d(-${container.children[i].offsetLeft - 28 }px, 0, 0)`
         }
       }
 
