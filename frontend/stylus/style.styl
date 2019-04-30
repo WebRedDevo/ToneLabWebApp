@@ -5,8 +5,10 @@
 @import 'plugins/wrd-atomic.styl'
 
 body
+  &[scroll='false']
+    overflow hidden
   &[modal='open']
-    position fixed
+    //position fixed
     width 100%
   &[calendar='open']
     .header--main
@@ -37,6 +39,12 @@ body
   padding-bottom 90px
   transition .33s
 .section
+  &__heading
+    .icon
+      width 30px
+      height 30px
+      fill #4e5067
+      transition .33s
   h2
     color #4e5067
     font-size 18px

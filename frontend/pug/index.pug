@@ -20,8 +20,10 @@ html(lang='ru')
             +article-planned
             +article-planned
             +article-planned
-      section.section.section--timetable.pd-28 
-        h2 Задачи на сегодня 
+      section.section.section--timetable.pd-28(view='max-info')
+        .section__heading.flex.a-i__c.j-c__s-b
+          h2 Задачи на сегодня 
+          +icon('eye')
         .section--timetable__days.flex.j-c__s-b
           a(href='/2007-07-18').button--day.flex.f-d__c.j-c__c.a-i__c 
             span.dayWeek.flex.j-c__c.a-i__c Пн
@@ -32,7 +34,7 @@ html(lang='ru')
           a(href='/2007-07-18').button--day.flex.f-d__c.j-c__c.a-i__c
             span.dayWeek.flex.j-c__c.a-i__c Ср
             span.dayNum 24
-          a(href='/2007-07-18').button--day.flex.f-d__c.j-c__c.a-i__c.active 
+          a(href='/2007-07-18').button--day.flex.f-d__c.j-c__c.a-i__c.current.active 
             span.dayWeek.flex.j-c__c.a-i__c Чт
             span.dayNum 25
           a(href='/2007-07-18').button--day.flex.f-d__c.j-c__c.a-i__c 

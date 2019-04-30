@@ -51,43 +51,54 @@ function orderCheck(){
   const buttonFulfilled = modal.getElementsByClassName('button-modal--fulfilled')[0];
 
   for( let i = 0, max = order.length; i < max; i++){
+
     order[i].addEventListener('click', function(e){
 
 
-
+      const selectOrder = this;
       const target = e.target;
 
       if(target.classList.contains('article-planned__check')){
         e.preventDefault();
 
         const path = "/update" + e.path[2].getAttribute('href');
+
         body.setAttribute('modal', 'open')
         modal.classList.add('open');
 
+        console.log(this)
 
 
         for( let i = 0, max = button.length; i < max; i++ ){
           button[i].addEventListener('click', function(e){
             e.preventDefault();
 
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', path, true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //const xhr = new XMLHttpRequest();
+            //xhr.open('POST', path, true);
+            //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-            if(e.target.classList.contains('button-modal--fulfilled') ){
-              xhr.send("status=1");
-            }else if(e.target.classList.contains('button-modal--unfulfilled') ){
-              xhr.send("status=0");
+
+            console.log(button)
+
+
+            if(this.classList.contains('button-modal--fulfilled') ){
+              //xhr.send("status=1");
+              selectOrder.classList.add('fulfilled')
+            }else if(this.classList.contains('button-modal--unfulfilled') ){
+              //xhr.send("status=0");
+              selectOrder.classList.add('unfulfilled')
             }else{
-              xhr.send("status=2");
+              //xhr.send("status=2");
+              selectOrder.classList.remove('fulfilled')
+              selectOrder.classList.remove('unfulfilled')
             }
 
 
-            xhr.onreadystatechange = function(){
-              if(xhr.readyState === 4){
-                location.href = location.href;
-              }
-            }
+            // xhr.onreadystatechange = function(){
+            //   if(xhr.readyState === 4){
+            //     //location.href = location.href;
+            //   }
+            // }
 
 
           })
@@ -98,6 +109,14 @@ function orderCheck(){
     });
 
   }
+
+  modal.addEventListener('touchstart', function(e){
+    const target = e.target;
+    if(target.classList.contains('open')){
+      body.setAttribute('modal', '')
+      modal.classList.remove('open')
+    }
+  })
 
 }
 

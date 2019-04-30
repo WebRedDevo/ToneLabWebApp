@@ -820,547 +820,804 @@
           </div>
         </div>
       </section>
-      <section class="section section--timetable pd-28"> 
-        <h2>Задачи на сегодня </h2>
-        <div class="section--timetable__days flex j-c__s-b"><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Пн</span><span class="dayNum">22</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Вт</span><span class="dayNum">23</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"><span class="dayWeek flex j-c__c a-i__c">Ср</span><span class="dayNum">24</span></a><a class="button--day flex f-d__c j-c__c a-i__c active" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Чт</span><span class="dayNum">25</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Пт</span><span class="dayNum">26</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Сб</span><span class="dayNum">27</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Вс</span><span class="dayNum">28</span></a></div>
+      <section class="section section--timetable pd-28" view="max-info">
+        <div class="section__heading flex a-i__c j-c__s-b">
+          <h2>Задачи на сегодня </h2>
+              <svg class="icon icon-eye ">
+                <use xlink:href="#icon-eye"></use>
+              </svg>
+        </div>
+        <div class="section--timetable__days flex j-c__s-b"><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Пн</span><span class="dayNum">22</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Вт</span><span class="dayNum">23</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"><span class="dayWeek flex j-c__c a-i__c">Ср</span><span class="dayNum">24</span></a><a class="button--day flex f-d__c j-c__c a-i__c current active" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Чт</span><span class="dayNum">25</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Пт</span><span class="dayNum">26</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Сб</span><span class="dayNum">27</span></a><a class="button--day flex f-d__c j-c__c a-i__c" href="/2007-07-18"> <span class="dayWeek flex j-c__c a-i__c">Вс</span><span class="dayNum">28</span></a></div>
         <div class="timetable__lists">
           <div class="timetable__wrap flex">
                 <ul class="timetable">
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">10:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange task--finished" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">11:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">13:00</p>
-                    <div class="timetable__tasks flex"></div>
+                    <div class="timetable__tasks flex">
+                      <div class="timetable__tasks_wrap flex">
+                            <article class="article-planned color-2"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                            <article class="article-planned color-1"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                      </div>
+                    </div>
                   </li>
-                  <li class="timetable__item flex a-i__c active">
+                  <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">14:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">15:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                    </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">16:00</p>
                     <div class="timetable__tasks flex">
-                      <button class="button--task button--green"> </button>
-                      <button class="button--task button--orange"> </button>
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">17:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">18:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">19:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--green"></button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">20:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                 </ul>
                 <ul class="timetable">
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">10:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange task--finished" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">11:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">13:00</p>
-                    <div class="timetable__tasks flex"></div>
+                    <div class="timetable__tasks flex">
+                      <div class="timetable__tasks_wrap flex">
+                            <article class="article-planned color-2"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                            <article class="article-planned color-1"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                      </div>
+                    </div>
                   </li>
-                  <li class="timetable__item flex a-i__c active">
+                  <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">14:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">15:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                    </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">16:00</p>
                     <div class="timetable__tasks flex">
-                      <button class="button--task button--green"> </button>
-                      <button class="button--task button--orange"> </button>
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">17:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">18:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">19:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--green"></button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">20:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                 </ul>
                 <ul class="timetable">
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">10:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange task--finished" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">11:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">13:00</p>
-                    <div class="timetable__tasks flex"></div>
+                    <div class="timetable__tasks flex">
+                      <div class="timetable__tasks_wrap flex">
+                            <article class="article-planned color-2"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                            <article class="article-planned color-1"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                      </div>
+                    </div>
                   </li>
-                  <li class="timetable__item flex a-i__c active">
+                  <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">14:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">15:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                    </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">16:00</p>
                     <div class="timetable__tasks flex">
-                      <button class="button--task button--green"> </button>
-                      <button class="button--task button--orange"> </button>
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">17:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">18:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">19:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--green"></button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">20:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                 </ul>
                 <ul class="timetable current">
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">10:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange task--finished" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">11:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">13:00</p>
-                    <div class="timetable__tasks flex"></div>
+                    <div class="timetable__tasks flex">
+                      <div class="timetable__tasks_wrap flex">
+                            <article class="article-planned color-2"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                            <article class="article-planned color-1"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                      </div>
+                    </div>
                   </li>
-                  <li class="timetable__item flex a-i__c active">
+                  <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">14:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">15:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                    </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">16:00</p>
                     <div class="timetable__tasks flex">
-                      <button class="button--task button--green"> </button>
-                      <button class="button--task button--orange"> </button>
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">17:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">18:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">19:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--green"></button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">20:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                 </ul>
                 <ul class="timetable">
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">10:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange task--finished" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">11:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">13:00</p>
-                    <div class="timetable__tasks flex"></div>
+                    <div class="timetable__tasks flex">
+                      <div class="timetable__tasks_wrap flex">
+                            <article class="article-planned color-2"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                            <article class="article-planned color-1"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                      </div>
+                    </div>
                   </li>
-                  <li class="timetable__item flex a-i__c active">
+                  <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">14:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">15:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                    </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">16:00</p>
                     <div class="timetable__tasks flex">
-                      <button class="button--task button--green"> </button>
-                      <button class="button--task button--orange"> </button>
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">17:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">18:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">19:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--green"></button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">20:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                 </ul>
                 <ul class="timetable">
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">10:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange task--finished" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">11:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">13:00</p>
-                    <div class="timetable__tasks flex"></div>
+                    <div class="timetable__tasks flex">
+                      <div class="timetable__tasks_wrap flex">
+                            <article class="article-planned color-2"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                            <article class="article-planned color-1"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                      </div>
+                    </div>
                   </li>
-                  <li class="timetable__item flex a-i__c active">
+                  <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">14:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">15:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                    </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">16:00</p>
                     <div class="timetable__tasks flex">
-                      <button class="button--task button--green"> </button>
-                      <button class="button--task button--orange"> </button>
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">17:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">18:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">19:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--green"></button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">20:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                 </ul>
                 <ul class="timetable">
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">10:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange task--finished" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">11:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green task--finished" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">13:00</p>
-                    <div class="timetable__tasks flex"></div>
+                    <div class="timetable__tasks flex">
+                      <div class="timetable__tasks_wrap flex">
+                            <article class="article-planned color-2"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                            <article class="article-planned color-1"><a href="order-page.html">
+                                <div class="article-planned__info">
+                                  <header class="article-planned__header flex j-c__s-b a-i__c">
+                                    <button class="article-planned__check"></button>
+                                  </header>
+                                  <h3>89217452078 BMW 3800</h3>
+                                  <p>Санкт–Петербург, Россия</p>
+                                </div></a></article>
+                      </div>
+                    </div>
                   </li>
-                  <li class="timetable__item flex a-i__c active">
+                  <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">14:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">15:00</p>
-                    <div class="timetable__tasks flex"><a class="button--task button--orange" href="#">
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a><a class="button--task button--green" href="#"> 
-                        <p>BMW</p>
-                        <p>89217452078</p>
-                        <p>тонировка: задние</p>
-                        <p>3800</p></a></div>
+                    <div class="timetable__tasks flex">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                    </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">16:00</p>
                     <div class="timetable__tasks flex">
-                      <button class="button--task button--green"> </button>
-                      <button class="button--task button--orange"> </button>
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
+                          <article class="article-planned color-1"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">17:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">18:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">19:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--green"></button>
-                    </div>
+                    <div class="timetable__tasks flex one-order"></div>
                   </li>
                   <li class="timetable__item flex a-i__c">
                     <p class="timetable__time">20:00</p>
-                    <div class="timetable__tasks flex">
-                      <button class="button--task button--orange"> </button>
+                    <div class="timetable__tasks flex one-order">
+                          <article class="article-planned color-2"><a href="order-page.html">
+                              <div class="article-planned__info">
+                                <header class="article-planned__header flex j-c__s-b a-i__c">
+                                  <button class="article-planned__check"></button>
+                                </header>
+                                <h3>89217452078 BMW 3800</h3>
+                                <p>Санкт–Петербург, Россия</p>
+                              </div></a></article>
                     </div>
                   </li>
                 </ul>
