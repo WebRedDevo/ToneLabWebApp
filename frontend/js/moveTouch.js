@@ -37,6 +37,7 @@ function moveTouch(object){
         })
 
         control.children[i].addEventListener('touchend', function(e){
+          e.preventDefault();
           if(coordY === e.changedTouches[0].pageY && coordX === e.changedTouches[0].pageX  ){
             changeControlButton()
           }

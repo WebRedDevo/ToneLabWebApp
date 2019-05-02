@@ -22,8 +22,13 @@
         <label>
           <input class="form__input" type="tel" placeholder="Номер" name="telephone" required>
         </label>
-        <label>
+        <label class="flex a-i__c">
           <input class="form__input" type="text" placeholder="Автомобиль" name="car" required>
+          <button class="button--select-car">
+                <svg class="icon icon-filter-results-button ">
+                  <use xlink:href="#icon-filter-results-button"></use>
+                </svg>
+          </button>
         </label>
         <label>
           <input class="form__input" type="text" placeholder="Услуга" name="service" required>
@@ -67,6 +72,17 @@
       <div class="modal-wrap flex f-d__c">
         <button class="button--close-modal"></button>
         <ul class="auto-list">
+          <li class="auto-list__item flex a-i__c j-c__s-b">
+            <div class="flex a-i__c">
+                  <svg class="icon icon-alfa-romeo auto-icon">
+                    <use xlink:href="#icon-alfa-romeo"></use>
+                  </svg>
+              <h6>Alfa Romeo</h6>
+            </div>
+                <svg class="icon icon-left-arrow-chevron ">
+                  <use xlink:href="#icon-left-arrow-chevron"></use>
+                </svg>
+          </li>
           <li class="auto-list__item flex a-i__c j-c__s-b">
             <div class="flex a-i__c">
                   <svg class="icon icon-audi auto-icon">

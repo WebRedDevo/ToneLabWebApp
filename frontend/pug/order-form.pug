@@ -11,8 +11,10 @@ html(lang='ru')
           input(type='text' placeholder='Имя' name='name' ).form__input
         label
           input(type='tel' placeholder='Номер' name='telephone' required).form__input
-        label
-          input(type='text' placeholder='Автомобиль' name='car' required).form__input  
+        label.flex.a-i__c
+          input(type='text' placeholder='Автомобиль' name='car' required).form__input 
+          button.button--select-car
+            +icon('filter-results-button') 
         label
           input(type='text' placeholder='Услуга' name='service' required).form__input
         label

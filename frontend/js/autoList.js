@@ -14,6 +14,7 @@ function autoList(){
 
   const autoListItem = modalAutoList.getElementsByClassName('auto-list')[0].getElementsByClassName('auto-list__item');
 
+  const buttonSelect = root.getElementsByClassName('button--select-car')[0];
   let nameAuto = '';
 
 
@@ -32,7 +33,7 @@ function autoList(){
       function openList(autoList){
         const autoTitle = root.createElement('div');
         autoTitle.className = 'auto-list__item auto-name flex a-i__c j-c__s-b';
-        inputCar.addEventListener('touchstart', function(e){
+        buttonSelect.addEventListener('touchstart', function(e){
           e.preventDefault();
           body.setAttribute('modal', 'open');
           modalAutoList.classList.add('open');
@@ -56,8 +57,10 @@ function autoList(){
             for(let i = 0, max = modelListItems.length; i < max; i++){
               modelListItems[i].addEventListener('click', function(){
                 let model = this.querySelector('p').innerHTML;
-                createListModel(autoList[nameAuto][model]);
 
+
+                createListModel(autoList[nameAuto][model]);
+      
                 for(let i = 0, max = modelListItems.length; i < max; i++){
                   modelListItems[i].addEventListener('click', function(){
                     let year = this.querySelector('p').innerHTML;
@@ -128,6 +131,8 @@ function autoList(){
       }
       modelListContainer.innerHTML = ul.innerHTML;
     }
+
+
 
     function closeModal(container){
       container.addEventListener('click', function(e){
