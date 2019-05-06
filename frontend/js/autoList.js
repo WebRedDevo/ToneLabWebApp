@@ -20,17 +20,27 @@ function autoList(){
 
 
   if(inputCar){
+      // get svg icon cars
+      httpGet('/svg/sprite.svg')
+        .then(
+          response =>{
+            const parser = new DOMParser();
+            const svgSprite = parser.parseFromString(response, "image/svg+xml")
+            // get price
+            httpGet('/price.json')
+              .then(
+                response => {
+                  let jsonParse = JSON.parse(response)
+                  openList(jsonParse, svgSprite)
+                  console.log(jsonParse)
+                }
+              );
 
-    httpGet('/price.json')
-      .then(
-        response => {
-          let jsonParse = JSON.parse(response)
-          openList(jsonParse)
-        }
-      );
+          }
+        );
 
+      function openList(autoList,svgSprite){
 
-      function openList(autoList){
         const autoTitle = root.createElement('div');
         autoTitle.className = 'auto-list__item auto-name flex a-i__c j-c__s-b';
         buttonSelect.addEventListener('touchstart', function(e){
@@ -60,7 +70,7 @@ function autoList(){
 
 
                 createListModel(autoList[nameAuto][model]);
-      
+
                 for(let i = 0, max = modelListItems.length; i < max; i++){
                   modelListItems[i].addEventListener('click', function(){
                     let year = this.querySelector('p').innerHTML;

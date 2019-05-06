@@ -5,6 +5,14 @@ function modal(modalInfo){
     const modal = root.createElement('div');
     const container = root.createElement(modalInfo.container);
 
+    if(modalInfo.title) {
+      const title = root.createElement('h3');
+      title.innerHTML = modalInfo.title;
+      container.appendChild(title);
+    }
+
+
+
     /*
 
     */

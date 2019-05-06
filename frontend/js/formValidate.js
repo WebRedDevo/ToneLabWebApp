@@ -1,6 +1,30 @@
+import modal from './modal'
+
+modal({
+  className : 'modal-warning',
+  container : 'div',
+  title : 'Заказ успешно добавлен',
+  buttons : [
+    {
+      tag : 'a',
+      class : 'button-modal--add',
+      text : 'Открыть заказы',
+      href : '/'
+    },
+    {
+      tag : 'a',
+      class : 'button-modal--add',
+      text : 'Добавить еще',
+      href : '/form-add'
+    }
+  ]
+
+});
+
 function formValidate(){
   const root = document;
-
+  const body = root.body;
+  const modal = root.getElementsByClassName('modal-warning')[0];
   if(root.getElementsByClassName('send-form')[0]){
     const form = root.getElementsByClassName('form--add-order')[0];
     const buttonAdd = root.getElementsByClassName('button--add')[0];
@@ -43,6 +67,9 @@ function formValidate(){
             let dom = new DOMParser().parseFromString(xhr.response, 'text/html');
             root.getElementsByTagName('form')[0].innerHTML = dom.getElementsByTagName('form')[0].innerHTML;
             formCheck = false;
+            body.setAttribute('modal', 'open');
+            modal.classList.add('open');
+
           }
         }
       }

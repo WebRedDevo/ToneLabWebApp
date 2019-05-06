@@ -12,9 +12,11 @@ function moveTouch(object){
     ]
 
     let firstTouch;
+    let firstTouch_Y;
     let left;
     let saveLeft;
-    let dif
+    let dif;
+    let dif_Y;
     const minLeft = object.padding ? object.padding : 0;
     const maxLeft = container.parentElement.offsetWidth - container.offsetWidth - minLeft;
 
@@ -54,8 +56,7 @@ function moveTouch(object){
           }
 
           container.style.transition = '0.33s'
-          console.log(container.children[i].offsetLeft)
-          console.log(container.children[i].getBoundingClientRect().left)
+
           container.style.transform = `translate3d(-${container.children[i].offsetLeft - 28 }px, 0, 0)`
         }
       }
@@ -74,10 +75,15 @@ function moveTouch(object){
         container.style.transition = ''
 
         firstTouch = e.changedTouches[0].pageX;
+        firstTouch_Y = e.changedTouches[0].pageY;
         left = container.getBoundingClientRect().x;
 
         container.addEventListener('touchmove', function(e){
 
+          dif_Y = e.changedTouches[0].pageY - firstTouch_Y;
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          window.scrollTo(0, -scrollTop)
+          document.getElementsByTagName('p')[1].innerHTML = dif_Y
           dif = e.changedTouches[0].pageX - firstTouch;
           saveLeft = left + dif;
 
